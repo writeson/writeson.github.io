@@ -1,0 +1,13 @@
+Reference Materials
+*******************
+
+Included below is a list of reference materials to help you go further in your study of Python.
+
+* `Python Website <https://www.python.org/>`_ - Main Python website
+* `Python Documentation <https://docs.python.org/3/>`_ - Official Python 3 Documentation
+* `Python Turtle Documentation <https://docs.python.org/3/library/turtle.html>`_ - Official Python Documentation for Turtle
+* `Learn Python <http://www.learnpython.org/>`_ - An interesting tutorial to help learn Python
+* `How To Think Like A Computer Scientist <http://interactivepython.org/runestone/static/thinkcspy/toc.html>`_ - Interesting and interactive way to learn Python
+* `PyGame <http://www.pygame.org/news.html>`_ - An add on module for writing games with Python
+* `Dan Bader <https://dbader.org/>`_ - A great resource to improve your Python skills
+* `Talk Python To Me <https://talkpython.fm/>`_ - A podcast all about Python

@@ -1,0 +1,166 @@
+Class 4 : Let's Write A Program Together
+****************************************
+For this class we're going to write a "Guess My Number" game program. In this game the program will pick a random number from 1 to 10 and the player will try to guess what the number is. The program will respond in different ways depending on whether the player guessed correctly or incorrectly. The player can also end the game whenever they want by telling the program "quit". The interesting part of this program is you're going to tell me how to write it instead of the other way around. 
+
+But before we get started, we need to learn a few more things about Python to help us build our game. 
+
+Getting Information From The Player 
+===================================
+
+In order to play our game the player has to interact with it. We need a way to get guesses from the player so the game can compare its secret number to the players guess. To do this we use the **input()** function. The **input()** function let's us ask the user for some information, and then wait for them to enter something using the keyboard. In the Python interactive mode it looks like this::
+
+	>>> guess = input("Please enter a number: ")
+	Please enter a number: 
+
+At the point where the **input()** function runs, the cursor is at the end of the "Please enter a number: " string, waiting for you to type something. You can type anything you want, when you hit the <ENTER> key whatever you typed will be assigned to the **guess** variable as a string. This is a very simple way to get input from the user using the keyboard.
+
+Converting A String To A Number 
+===============================
+
+We haven't talked about this yet, but there is a difference between a string like "10" and the number 10. Try this in the interactive mode::
+
+	>>> 10 == 10
+	True
+	>>> "10" == 10
+	False
+	>>>
+
+On the first line we are comparing the two number 10's to each other to see if they are equal. Python knows they are, so it responds by printing **True** to the screen. But the next comparison, "10" == 10, why does Python respond with False? The simple answer is Python doesn't think they're equal. But why aren't they equal? This can be confusing, "10" looks like the number ten. And 10 definitely looks like the number ten as well. For Python however, this isn't true. The number 10 is exactly that, the numerical value 10. The string "10" is just a string, it has no numerical value, even though "10" looks like ten to us. The difference is the representation. The "10" represents a string to Python, it doesn't know that string represents ten to us. The 10 however does mean numerical ten to Python, ten things, ten cars, ten whatever.
+
+What does this have to do with our game? A lot actually. When the game starts the program will randomly pick a *number* from 1 to 10, not a string, a number. However when the player types something into our **guess = input("Please enter a number: ")** prompt, **guess** is a string variable. Even if the player enters a "1" and then a "0" and then hits enter, the **guess** variable will be a string. This is where a problem comes in. Let's say we call the game's variable for its number **secret_number**. If we write some Python code that compares them, like this::
+
+	if secret_number == guess:
+
+it will fail because comparing a string to a number will always be **False**. We need to make Python compare two of the same kinds of things. For our game, both things need to be numbers. We need to convert the player's **guess** variable to a number. Python can do this using the **int()** function. It looks like this::
+
+	guess_number = int(guess)
+
+With this code we're taking the player's input, **guess**, which could be something like "8", and converting it to the numerical value 8 and assigning it to the new variable **guess_number**. Now when we compare **guess_number** with **secret_number**, they are the same kind of thing (numbers) and will compare correctly when we write Python code like this::
+
+	if guess_number == secret_number:
+
+Another Kind Of Loop 
+====================
+
+We've only used the **for** loop so far because it's handy when you know ahead of time how many times you want to loop. For our game program we won't know ahead of time how many guesses it will take our player to guess the **secret_number**. We also don't know how many times they'll want to play the game. This is a perfect use for the other loop Python supports, the **while** loop. The **while** loop is called a *conditional loop* because it will continue looping until some condition it is testing is True. Here's an example of a **while** loop::
+
+	game_running = True
+	while game_running:
+		# run some Python statements
+
+What these program lines mean is that while the variable **game_running** is **True**, the while loop will keep looping. This also means something in the **while** loop will have to change the value of **game_running** in order for the program to exit the loop. Forgetting to provide a way for the **while** loop to end creates what's called an *infinite loop*. This is usually a bad thing and means in order to exit the program it has to be crashed or stopped in some other way.
+
+More Things We Can Do With Lists 
+================================
+
+We've used Python lists before to hold things we want to deal with as one thing, like lists of turtles. We've created lists and appended things to lists. So far we've used the things in the list one at a time using the **for** loop. But how do we get to the individual things inside a list? For example, suppose I have this list in Python::
+
+	names = ["Andy", "George", "Sally", "Sharon", "Sam", "Chris"]
+
+How can I get just the "Sally" name from the **names** list variable? We use something called *list indexing* to do that. Everything in a list has a position in the list, and all lists in Python start at position 0. The position is called an index, so to get "Sally" from the list, remembering all lists start at index 0, we do this::
+
+	name = names[2]
+
+When we do this the variable **name** will be equal to "Sally" from our list. The "[2]" above is called the index into the list. We've told Python we want the thing inside the **names** list at index 2.
+
+How Many Items Are In A List?
++++++++++++++++++++++++++++++
+
+It's often useful to be able to find out how many things are in a list. For instance, our **names** list above has six strings in it. But how could we find this out using Python? We use the **len()** function. It looks like this::
+
+	number_of_names_in_list = len(names)
+
+This will set the variable **number_of_names_in_list** equal to six. Notice something about the number of items in the **names** list and the largest index, the name "Chris". To get the name "Chris" from our **names** list we would do this::
+
+	name = names[5]
+
+The last thing in the list is at index 5, but the number of things in the list is 6. This is because all lists start with index 0, which is included in the number of things in the list. So for the names list we have indexes 0, 1, 2, 3, 4 and 5, totaling 6 things.
+
+How To Pick Random Things From A List? 
+++++++++++++++++++++++++++++++++++++++
+
+Now we know how to pick individual things from a list, how to determine how long a list is and what the maximum index value in a list is. Can we use this information to choose a random thing from a list? For a minute let's think about our turtle programs, we had a list something like this::
+
+	colors = ["black", "red", "organge", "yellow", "green", "blue"]
+
+How could we pick a random color from this list to use when we were creating a turtle? We know the smallest index is 0, which would be the color "black". We also know by looking at the list that our largest index is 5, the color blue. This is one less than the number of colors in the list. So we could do something like this::
+
+	colors = ["black", "red", "organge", "yellow", "green", "blue"]
+	turtle_color = colors[random.randint(0, 5)]
+
+This Python statement would set the **turtle_color** variable to a random color from our **colors** list. But what if we added more colors to our list? Something like this::
+
+	colors = ["black", "red", "organge", "yellow", "green", "blue", "violet", "pink"]
+	turtle_color = colors[random.randint(0, 5)]
+
+Unless we change the '5' in the **random.randint(5)** function we'll still be picking from the first six colors and ignoring the new ones we added. What if we're picking random colors all over our program, we'd have to change all the lines that pick a color every time we changed the number of colors in our **colors** list. Can we get Python to handle this for us? Sure we can, we can use the **len()** function to help us out. We can change our code to look like this::
+
+	colors = ["black", "red", "organge", "yellow", "green", "blue", "violet", "pink"]
+	turtle_color = colors[random.randint(0, len(colors) - 1)]
+
+What's going on here? We still have our **colors** list variable, but now we're using the **len()** function inside our **random.randint()** function. This is okay, the **len()** function returns a number and **random.randint()** expects a number as its second parameter. But now we're telling **random.randint()** the upper index limit of the numbers we want to choose from is one less than the number of things in the **colors** list variable. And as we've seen, one less than the number of things in a list will always be the highest index in the list. By using the code above we can add or subtract as many items from the **colors** list as we want and our random selection will still work, using all the things in the list.
+
+Our Completed Guess My Number Program
+=====================================
+
+Here's our Guess My Number program, complete with comments:
+
+.. code-block:: python
+
+	# 
+	# guess my number
+	#
+
+	import random
+
+	# set our game ending flag to False
+	game_running = True
+
+	while game_running:
+		# Greet the user to our game
+		print()
+		print("I'm thinking of a number between 1 and 10, can you guess it?")
+
+		# have the program pick a random number between 1 and 10
+		secret_number = random.randint(0, 10)
+
+		# set the player's guess number to something outside the range
+		guess_number = -1
+
+		# loop until the player guesses our number
+		while guess_number != secret_number:
+
+			# get the player's guess from the player
+			print()
+			guess = input("Please enter a number: ")
+
+			# does the user want to quit playing?
+			if guess == "quit":
+				game_running = False
+				break
+
+			# otherwise, nope, player wants to keep going
+			else:
+				# convert the players guess from a string to an integer 
+				guess_number = int(guess)
+
+
+			# did the player guess the program's number?
+			if guess_number == secret_number:
+				print()
+				print("Congratulations, you guessed my number!")
+
+			# otherwise, whoops, nope, go around again
+			else:
+				print()
+				print("Oh, to bad, that's not my number...")
+
+	# say goodbye to the player            
+	print()
+	print("Thanks for playing!!")
+
+Congratulations!
+================
+
+We've completed our course and I hope you've had as much fun as I have! We've written some pretty amazing programs and learned quite a bit about programming and Python along the way. My wish is this interested you enough to keep learning about programming and to continue on to discover new things you can do with Python!
+

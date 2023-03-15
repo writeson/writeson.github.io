@@ -1,0 +1,65 @@
+Appendix : Python Information That Doesn't Fit In Class
+*******************************************************
+
+Differences Between Python And Other Languages
+==============================================
+There are many programming languages out in the wild you can use to program a computer. Some have been around for a long time, like Fortran and C, and some are quite new, like Dart or Go. Python falls in the middle ground of being fairly new, but quite mature.
+
+Why would a programmer choose one language to learn over another? That's a somewhat complicated question as most languages will allow you to do anything you want. However it can be difficult to express what you want to do with a particular language instead of something else. For instance, Fortran excels at computation and in fact it's name comes from Fromula Translation (ForTran). However it's not known as a great language if you need to do a lot of string/text manipulation. The C programming language is a great language if your goal is to maximize the performance of your program. If you program it well you can create extremely fast programs. Notice I said "if you program it well", if you don't you can completely crash not only your program, but perhaps even your computer. The C language doesn't hold your hand to prevent you from doing things that could be bad for your program.
+
+In addition to how well a language fits the problem you're trying to solve, it might not be able to be used with the tools you like, or might not provide the tools you need, a particular language just may not appeal to you visually and appear ugly to you.
+
+My choice of teaching Python fits a "sweet spot" for me. It's fast enough to create the kinds of programs I want to create. It's visually very appealing to me, and the grammar and syntax of the language fit the way I want to express the problems I'm trying to solve.
+
+Vocabulary
+==========
+Let's talk about some of the vocabulary used in the class and what it means. Programming languages have their own "jargon", or words, meaning specific things to programmers and that language. Here are some terms we've used in relation to Python.
+
+IDLE - command prompt
+---------------------
+IDLE is the programming environment that comes with Python. It's what's called an IDE, or Integrated Development Environment, and pulls together some useful things to help write Python programs. When you start IDLE it opens up a window that has the Python interactive prompt >>> in it. This is a window running the Python interpreter in interactive mode. This is where you can play around with some simple Python program statements. It's kind of a sandbox where you can try things out. However, there is no way to save or edit your work; once the Python interpreter runs your statements, they're gone.
+
+IDLE - editor window
+--------------------
+The file window (File -> New Window) opens up a simple text editor. This is like notepad in Windows, except it knows about Python code, how to format it and colorizes the text. This is where you can write, edit and save your work and run it again later. When you run this code, behind the scenes IDLE is running the program in the Python interpreter, just like it is in the first IDLE window.
+
+Syntax Highlighting
+-------------------
+When we edit code in the file window of IDLE it knows about Python code. One of the things this means is the editor can "colorize", or syntax highlight, various parts of the Python code you're entering. It sets the keywords of Python, like for and if, to certain colors. Strings to other colors and comments to another. This is just the file window being helpful and providing syntax highlighting to make it easier for the programmer to read and understand what's going on in the program.
+
+Python Command Line
+-------------------
+In Windows if you open up a command line window, what used to be called a DOS box, and run python, the system will respond with the Python command prompt >>>. At this point you're running Python in it's interactive mode, just like when you're inside of IDLE. In fact they are the same thing, IDLE is running it's own Python command line inside the window, they are functionally identical.
+
+You might think "what use is that?", and I agree, I'd rather work in IDLE if I'm going to using the interactive mode and play with the sandbox mode and the >>> command prompt. The real use of the Python command line is when you enter something like this at the system command prompt:
+
+python myprogram.py
+
+If I've written a program called myprogram.py and entered the line above, instead of going into interactive mode, Python will read myprogram.py and run the code. This is very useful if you're written a program you want to use and not run inside of IDLE. As a programmer I run programs in this manner all day long, and in many cases these programs run essentially forever as servers.
+
+Attribute and Property
+======================
+We've thrown around the terms "attribute" and "property" kind of randomly, and this can lead to some confusion. The reason it's confusing is these things mean essentially the same thing. When talking about programming there is always the goal to use specific words and terms to eliminate confusion about what you're talking about. For instance let's talk about you. You have many qualities that different people want to express. Your friends want to know your name and phone number. Your school wants to know that as well, and your age, the grade you're in and our attendance record. In programming terms we can think of these as attributes or properties about you. The attributes and properties of a thing (you for example) help get more specific information about the thing. And the specific information wanted depends on the audience asking. For example when meeting someone new they are more likely to be interested in your name property. Whereas your school might be more interested in your attendance property.
+
+In Python we've been working with turtles, and those turtles have attributes and properties. For example a turtle as a property called forward. This property happens to be a function that moves the turtle forward, but it's still a property of the turtle. In fact all the properties and attributes associated with a turtle are expressed as functions. These functions either make the turtle do something, or tell us something about the turtle. 
+
+Attributes and properties lead into a concept of Object Oriented Programming (OOP) that adds the concept of "things" to programs rather than just data and statements. Object Oriented Programming is beyond the scope of this book, but is very interesting and useful.
+
+Interpreter vs. Compiler
+========================
+In class you've heard me talk about the Python interpreter, what does this mean. As we've talked about, computer languages are a way for people to tell a computer what to do. But the truth is a computer only understands 0's and 1's, so how does a computer understand a language like Python? That's where a translation layer comes into play, and that translation layer is the interpreter for Python (and other interpreted languages) and a compiler for compiled languages. Let's talk about compilers first.
+
+Compiler
+--------
+A compiler is a translator that converts a computer language into machine code, the 0's and 1's a computer understands. A compiler usually produces an executable file, on Windows machines this is a file that ends in .exe. This file contains machine code information the computer can run directly. Languages like C, C++ and Fortran are compiled languages and have to be processed by a compiler before the program can run. One thing this means is you can't run a compiled language directly, you have to compile it first. It also means there is nothing like the interactive mode (the >>> prompt in Python) in a compiled language. The entire program has to be compiled, it can't compile and run single statements.
+
+Interpreter
+-----------
+Here's where things get a little more confusing. Most interpreted languages also have a compiled step, but the output of that step isn't machine code, no 0's and 1's. Instead the compilation step produces what is called ByteCode. The ByteCode is kind of an intermediate step between the near English computer language and the machine code understood by the computer. The ByteCode can't be run directly, it is run by a thing called a virtual machine. When the program is run, the virtual machine reads the ByteCode and it generates the computer specific machine code that actually is run by the computer. When you run the program the virtual machine is constantly "interpreting" the ByteCode and generating computer specific machine code. Unlike a compiled language, languages like Python with virtual machines can provide an interactive mode (the >>> prompt) as the interpreter and virtual machine can translate and run program statements on the fly.
+
+Advantages And Disadvantages
+----------------------------
+So why would a programmer pick a compiled language over an interpreted language, and vice versa? Well, what we said before still applies, expressiveness of the language, style, etc, those are important things to think about when choosing a language for a project. But there are some differences beyond that. In general compiled languages produce programs that run faster than programs produced by an interpreter. Remember, compiled languages produce programs containing machine code that can be run directly, whereas interpreted languages usually have a virtual machine between the ByteCode and the machine code, so there's a speed penalty there. However, also keep in mind modern computers are so fast this difference is less important. In addition, interpreted languages are being constantly improved so their performance gets better and better, so the performance difference between the two is shrinking.
+
+Most interpreted languages also offer safety features to prevent the programmer from crashing the program. Interpreted languages make it hard to corrupt memory. They make it difficult to get direct access to the hardware. They don't force the programmer to manage memory explicitly. Compiled programs like C offer none of this, and therefore it's easy to do all of those things, which can put your program at risk, unless you're a skilled programmer. The safety features can be added to a C program, but this has to be done manually by the programmer and isn't handled by the language natively.
+
