@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Appendix : Python Information That Doesn’t Fit In Class &#8212; Python 3 Drawing with Turtles 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=0.7.0-1" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <script src="_static/js/petite-vue.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Reference Materials" href="reference.html" />
+    <link rel="prev" title="Class 4 : Let’s Write A Program Together" href="class_four.html" /> 
+  </head><body data-dark_mode_code_blocks="true">
+
+<div id="top_nav">
+    
+
+    <nav>
+        
+            
+        
+
+        <p id="toggle_sidebar">
+            <a href="#" title="Toggle sidebar">|||</a>
+        </p>
+        <h1><a href="index.html" title="Go to homepage">Python 3 Drawing with Turtles 1 documentation</a></h1>
+
+        <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
+    <template v-if="mode == 'light'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_light"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M67.48,18.073c1.913,-1.912 1.913,-5.018 0,-6.931c-1.912,-1.912 -5.018,-1.912 -6.931,0l-6.798,6.799c-1.912,1.912 -1.912,5.018 0,6.931c1.913,1.912 5.018,1.912 6.931,-0l6.798,-6.799Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.728,61.108c1.912,-1.913 1.912,-5.018 -0,-6.931c-1.913,-1.913 -5.019,-1.913 -6.931,-0l-6.799,6.798c-1.912,1.913 -1.912,5.019 0,6.931c1.913,1.913 5.019,1.913 6.931,0l6.799,-6.798Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.682,54.177c-1.913,-1.913 -5.018,-1.913 -6.931,-0c-1.912,1.913 -1.912,5.018 0,6.931l6.798,6.798c1.913,1.913 5.019,1.913 6.931,0c1.913,-1.912 1.913,-5.018 0,-6.931l-6.798,-6.798Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M4.901,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,-0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M18.929,11.142c-1.912,-1.912 -5.018,-1.912 -6.931,0c-1.912,1.913 -1.912,5.019 0,6.931l6.799,6.799c1.912,1.912 5.018,1.912 6.931,-0c1.912,-1.913 1.912,-5.019 -0,-6.931l-6.799,-6.799Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.108,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c-0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c-0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+
+    <template v-if="mode == 'dark'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_dark"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.901,2.196 -4.901,4.901c0,2.705 2.197,4.901 4.901,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.662,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.989,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.732,61.103c1.91,-1.91 1.91,-5.011 0,-6.921l-0.009,-0.01c-1.91,-1.91 -5.012,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.909,1.91 5.011,1.91 6.92,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.672,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.52,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l-0,-0.01c-0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.901,2.196 -4.901,4.901c0,2.704 2.197,4.9 4.901,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.73,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 -0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.098,34.623c-2.699,0 -4.891,2.192 -4.891,4.892l-0,0.019c-0,2.699 2.192,4.891 4.891,4.891c2.7,0 4.892,-2.192 4.892,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.892,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+
+    <template v-if="mode == 'darkest'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_darkest"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><path d="M39.315,23.791c8.684,-0 15.734,7.05 15.734,15.733c0,8.684 -7.05,15.734 -15.734,15.734c-8.683,0 -15.733,-7.05 -15.733,-15.734c-0,-8.683 7.05,-15.733 15.733,-15.733Zm0,4.737c6.069,0 10.997,4.927 10.997,10.996c-0,6.069 -4.928,10.996 -10.997,10.996c-6.068,0 -10.996,-4.927 -10.996,-10.996c0,-6.069 4.928,-10.996 10.996,-10.996Z" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.216,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.9,2.196 -4.9,4.901c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.666,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.99,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.737,61.103c1.909,-1.91 1.909,-5.011 -0,-6.921l-0.01,-0.01c-1.91,-1.91 -5.011,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.91,1.91 5.011,1.91 6.921,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.676,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.524,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l0,-0.01c0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.216,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901c-0,2.704 2.196,4.9 4.9,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.734,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.103,34.623c-2.7,0 -4.892,2.192 -4.892,4.892l-0,0.019c-0,2.699 2.192,4.891 4.892,4.891c2.699,0 4.891,-2.192 4.891,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.891,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+</a>
+
+<script>
+(function() {
+    const LOCAL_STORAGE_KEY = 'piccoloThemeMode'
+
+    var initialMode = localStorage.getItem(LOCAL_STORAGE_KEY)
+
+    if (initialMode) {
+        // Make sure the value in local storage is valid
+        if (['light', 'dark', 'darkest'].indexOf(initialMode) == -1) {
+            initialMode = 'light'
+            localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
+        }
+    } else {
+        // Check if the client prefers dark mode
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            initialMode = 'dark'
+        } else {
+            initialMode = 'light'
+        }
+        localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
+    }
+
+    document.documentElement.dataset.mode = initialMode
+
+    PetiteVue.createApp({
+        'mode': initialMode,
+        handleClick() {
+            let currentMode = this.mode
+
+            if (currentMode == 'light') {
+                this.mode = 'dark'
+            } else if (currentMode == 'dark') {
+                this.mode = 'darkest'
+            } else if (currentMode == 'darkest') {
+                this.mode = 'light'
+            }
+
+            document.documentElement.dataset.mode = this.mode
+            localStorage.setItem(LOCAL_STORAGE_KEY, this.mode)
+
+            console.log(this.mode)
+        }
+    }).mount('#mode_toggle')
+})()
+</script>
+            <p class="mobile_search_link">
+                <a href="search.html" title="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+                        <path d="M14.873 40.009c-2.315-3.943-3.642-8.532-3.642-13.429C11.231 11.91 23.141 0 37.811 0s26.58 11.91 26.58 26.58-11.91 26.58-26.58 26.58a26.44 26.44 0 0 1-14.277-4.161L9.739 62.794a3.12 3.12 0 0 1-4.413 0L.913 58.382c-1.217-1.218-1.217-3.196 0-4.413l13.96-13.96zM37.811 8.054c10.225 0 18.526 8.301 18.526 18.526s-8.301 18.526-18.526 18.526-18.526-8.301-18.526-18.526S27.586 8.054 37.811 8.054z" fill="#fff" />
+                    </svg>
+                </a>
+            </p>
+        
+
+        <div class="searchbox_wrapper">
+            
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_one.html">Class 1 : Welcome to Python Programming!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_two.html">Class 2 : Programmers Are Lazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_three.html">Class 3 : Let’s Get Those Turtles Thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_four.html">Class 4 : Let’s Write A Program Together</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Appendix : Python Information That Doesn’t Fit In Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference Materials</a></li>
+</ul>
+
+        </div>
+      </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="appendix-python-information-that-doesn-t-fit-in-class">
+<h1>Appendix : Python Information That Doesn’t Fit In Class<a class="headerlink" href="#appendix-python-information-that-doesn-t-fit-in-class" title="Permalink to this heading">¶</a></h1>
+<section id="differences-between-python-and-other-languages">
+<h2>Differences Between Python And Other Languages<a class="headerlink" href="#differences-between-python-and-other-languages" title="Permalink to this heading">¶</a></h2>
+<p>There are many programming languages out in the wild you can use to program a computer. Some have been around for a long time, like Fortran and C, and some are quite new, like Dart or Go. Python falls in the middle ground of being fairly new, but quite mature.</p>
+<p>Why would a programmer choose one language to learn over another? That’s a somewhat complicated question as most languages will allow you to do anything you want. However it can be difficult to express what you want to do with a particular language instead of something else. For instance, Fortran excels at computation and in fact it’s name comes from Fromula Translation (ForTran). However it’s not known as a great language if you need to do a lot of string/text manipulation. The C programming language is a great language if your goal is to maximize the performance of your program. If you program it well you can create extremely fast programs. Notice I said “if you program it well”, if you don’t you can completely crash not only your program, but perhaps even your computer. The C language doesn’t hold your hand to prevent you from doing things that could be bad for your program.</p>
+<p>In addition to how well a language fits the problem you’re trying to solve, it might not be able to be used with the tools you like, or might not provide the tools you need, a particular language just may not appeal to you visually and appear ugly to you.</p>
+<p>My choice of teaching Python fits a “sweet spot” for me. It’s fast enough to create the kinds of programs I want to create. It’s visually very appealing to me, and the grammar and syntax of the language fit the way I want to express the problems I’m trying to solve.</p>
+</section>
+<section id="vocabulary">
+<h2>Vocabulary<a class="headerlink" href="#vocabulary" title="Permalink to this heading">¶</a></h2>
+<p>Let’s talk about some of the vocabulary used in the class and what it means. Programming languages have their own “jargon”, or words, meaning specific things to programmers and that language. Here are some terms we’ve used in relation to Python.</p>
+<section id="idle-command-prompt">
+<h3>IDLE - command prompt<a class="headerlink" href="#idle-command-prompt" title="Permalink to this heading">¶</a></h3>
+<p>IDLE is the programming environment that comes with Python. It’s what’s called an IDE, or Integrated Development Environment, and pulls together some useful things to help write Python programs. When you start IDLE it opens up a window that has the Python interactive prompt &gt;&gt;&gt; in it. This is a window running the Python interpreter in interactive mode. This is where you can play around with some simple Python program statements. It’s kind of a sandbox where you can try things out. However, there is no way to save or edit your work; once the Python interpreter runs your statements, they’re gone.</p>
+</section>
+<section id="idle-editor-window">
+<h3>IDLE - editor window<a class="headerlink" href="#idle-editor-window" title="Permalink to this heading">¶</a></h3>
+<p>The file window (File -&gt; New Window) opens up a simple text editor. This is like notepad in Windows, except it knows about Python code, how to format it and colorizes the text. This is where you can write, edit and save your work and run it again later. When you run this code, behind the scenes IDLE is running the program in the Python interpreter, just like it is in the first IDLE window.</p>
+</section>
+<section id="syntax-highlighting">
+<h3>Syntax Highlighting<a class="headerlink" href="#syntax-highlighting" title="Permalink to this heading">¶</a></h3>
+<p>When we edit code in the file window of IDLE it knows about Python code. One of the things this means is the editor can “colorize”, or syntax highlight, various parts of the Python code you’re entering. It sets the keywords of Python, like for and if, to certain colors. Strings to other colors and comments to another. This is just the file window being helpful and providing syntax highlighting to make it easier for the programmer to read and understand what’s going on in the program.</p>
+</section>
+<section id="python-command-line">
+<h3>Python Command Line<a class="headerlink" href="#python-command-line" title="Permalink to this heading">¶</a></h3>
+<p>In Windows if you open up a command line window, what used to be called a DOS box, and run python, the system will respond with the Python command prompt &gt;&gt;&gt;. At this point you’re running Python in it’s interactive mode, just like when you’re inside of IDLE. In fact they are the same thing, IDLE is running it’s own Python command line inside the window, they are functionally identical.</p>
+<p>You might think “what use is that?”, and I agree, I’d rather work in IDLE if I’m going to using the interactive mode and play with the sandbox mode and the &gt;&gt;&gt; command prompt. The real use of the Python command line is when you enter something like this at the system command prompt:</p>
+<p>python myprogram.py</p>
+<p>If I’ve written a program called myprogram.py and entered the line above, instead of going into interactive mode, Python will read myprogram.py and run the code. This is very useful if you’re written a program you want to use and not run inside of IDLE. As a programmer I run programs in this manner all day long, and in many cases these programs run essentially forever as servers.</p>
+</section>
+</section>
+<section id="attribute-and-property">
+<h2>Attribute and Property<a class="headerlink" href="#attribute-and-property" title="Permalink to this heading">¶</a></h2>
+<p>We’ve thrown around the terms “attribute” and “property” kind of randomly, and this can lead to some confusion. The reason it’s confusing is these things mean essentially the same thing. When talking about programming there is always the goal to use specific words and terms to eliminate confusion about what you’re talking about. For instance let’s talk about you. You have many qualities that different people want to express. Your friends want to know your name and phone number. Your school wants to know that as well, and your age, the grade you’re in and our attendance record. In programming terms we can think of these as attributes or properties about you. The attributes and properties of a thing (you for example) help get more specific information about the thing. And the specific information wanted depends on the audience asking. For example when meeting someone new they are more likely to be interested in your name property. Whereas your school might be more interested in your attendance property.</p>
+<p>In Python we’ve been working with turtles, and those turtles have attributes and properties. For example a turtle as a property called forward. This property happens to be a function that moves the turtle forward, but it’s still a property of the turtle. In fact all the properties and attributes associated with a turtle are expressed as functions. These functions either make the turtle do something, or tell us something about the turtle.</p>
+<p>Attributes and properties lead into a concept of Object Oriented Programming (OOP) that adds the concept of “things” to programs rather than just data and statements. Object Oriented Programming is beyond the scope of this book, but is very interesting and useful.</p>
+</section>
+<section id="interpreter-vs-compiler">
+<h2>Interpreter vs. Compiler<a class="headerlink" href="#interpreter-vs-compiler" title="Permalink to this heading">¶</a></h2>
+<p>In class you’ve heard me talk about the Python interpreter, what does this mean. As we’ve talked about, computer languages are a way for people to tell a computer what to do. But the truth is a computer only understands 0’s and 1’s, so how does a computer understand a language like Python? That’s where a translation layer comes into play, and that translation layer is the interpreter for Python (and other interpreted languages) and a compiler for compiled languages. Let’s talk about compilers first.</p>
+<section id="compiler">
+<h3>Compiler<a class="headerlink" href="#compiler" title="Permalink to this heading">¶</a></h3>
+<p>A compiler is a translator that converts a computer language into machine code, the 0’s and 1’s a computer understands. A compiler usually produces an executable file, on Windows machines this is a file that ends in .exe. This file contains machine code information the computer can run directly. Languages like C, C++ and Fortran are compiled languages and have to be processed by a compiler before the program can run. One thing this means is you can’t run a compiled language directly, you have to compile it first. It also means there is nothing like the interactive mode (the &gt;&gt;&gt; prompt in Python) in a compiled language. The entire program has to be compiled, it can’t compile and run single statements.</p>
+</section>
+<section id="interpreter">
+<h3>Interpreter<a class="headerlink" href="#interpreter" title="Permalink to this heading">¶</a></h3>
+<p>Here’s where things get a little more confusing. Most interpreted languages also have a compiled step, but the output of that step isn’t machine code, no 0’s and 1’s. Instead the compilation step produces what is called ByteCode. The ByteCode is kind of an intermediate step between the near English computer language and the machine code understood by the computer. The ByteCode can’t be run directly, it is run by a thing called a virtual machine. When the program is run, the virtual machine reads the ByteCode and it generates the computer specific machine code that actually is run by the computer. When you run the program the virtual machine is constantly “interpreting” the ByteCode and generating computer specific machine code. Unlike a compiled language, languages like Python with virtual machines can provide an interactive mode (the &gt;&gt;&gt; prompt) as the interpreter and virtual machine can translate and run program statements on the fly.</p>
+</section>
+<section id="advantages-and-disadvantages">
+<h3>Advantages And Disadvantages<a class="headerlink" href="#advantages-and-disadvantages" title="Permalink to this heading">¶</a></h3>
+<p>So why would a programmer pick a compiled language over an interpreted language, and vice versa? Well, what we said before still applies, expressiveness of the language, style, etc, those are important things to think about when choosing a language for a project. But there are some differences beyond that. In general compiled languages produce programs that run faster than programs produced by an interpreter. Remember, compiled languages produce programs containing machine code that can be run directly, whereas interpreted languages usually have a virtual machine between the ByteCode and the machine code, so there’s a speed penalty there. However, also keep in mind modern computers are so fast this difference is less important. In addition, interpreted languages are being constantly improved so their performance gets better and better, so the performance difference between the two is shrinking.</p>
+<p>Most interpreted languages also offer safety features to prevent the programmer from crashing the program. Interpreted languages make it hard to corrupt memory. They make it difficult to get direct access to the hardware. They don’t force the programmer to manage memory explicitly. Compiled programs like C offer none of this, and therefore it’s easy to do all of those things, which can put your program at risk, unless you’re a skilled programmer. The safety features can be added to a C program, but this has to be done manually by the programmer and isn’t handled by the language natively.</p>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    
+        <div id="show_right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon"><</span><span>Page contents<span></a></p>
+        </div>
+
+        <div id="right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">></span><span>Page contents:<span></a></p>
+            <div class="page_toc">
+                <ul>
+<li><a class="reference internal" href="#">Appendix : Python Information That Doesn’t Fit In Class</a><ul>
+<li><a class="reference internal" href="#differences-between-python-and-other-languages">Differences Between Python And Other Languages</a></li>
+<li><a class="reference internal" href="#vocabulary">Vocabulary</a><ul>
+<li><a class="reference internal" href="#idle-command-prompt">IDLE - command prompt</a></li>
+<li><a class="reference internal" href="#idle-editor-window">IDLE - editor window</a></li>
+<li><a class="reference internal" href="#syntax-highlighting">Syntax Highlighting</a></li>
+<li><a class="reference internal" href="#python-command-line">Python Command Line</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#attribute-and-property">Attribute and Property</a></li>
+<li><a class="reference internal" href="#interpreter-vs-compiler">Interpreter vs. Compiler</a><ul>
+<li><a class="reference internal" href="#compiler">Compiler</a></li>
+<li><a class="reference internal" href="#interpreter">Interpreter</a></li>
+<li><a class="reference internal" href="#advantages-and-disadvantages">Advantages And Disadvantages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+    
+
+      <div class="clearer"></div>
+    </div>
+    <div class="button_nav_wrapper">
+        <div class="button_nav">
+            <div class="left">
+                
+                <a href="class_four.html">
+                    <span class="icon"><</span><span>Class 4 : Let’s Write A Program Together</span></a>
+                
+            </div>
+
+            <div class="right">
+                
+                    <a href="reference.html"><span>Reference Materials</span><span class="icon">></span></a>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Doug Farrell.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    </div>
+
+<p id="theme_credit">Styled using the <a href="https://github.com/piccolo-orm/piccolo_theme">Piccolo Theme</a></p>
+  </body>
+</html>

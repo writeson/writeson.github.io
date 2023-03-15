@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Class 3 : Let’s Get Those Turtles Thinking &#8212; Python 3 Drawing with Turtles 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=0.7.0-1" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <script src="_static/js/petite-vue.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Class 4 : Let’s Write A Program Together" href="class_four.html" />
+    <link rel="prev" title="Class 2 : Programmers Are Lazy" href="class_two.html" /> 
+  </head><body data-dark_mode_code_blocks="true">
+
+<div id="top_nav">
+    
+
+    <nav>
+        
+            
+        
+
+        <p id="toggle_sidebar">
+            <a href="#" title="Toggle sidebar">|||</a>
+        </p>
+        <h1><a href="index.html" title="Go to homepage">Python 3 Drawing with Turtles 1 documentation</a></h1>
+
+        <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
+    <template v-if="mode == 'light'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_light"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M67.48,18.073c1.913,-1.912 1.913,-5.018 0,-6.931c-1.912,-1.912 -5.018,-1.912 -6.931,0l-6.798,6.799c-1.912,1.912 -1.912,5.018 0,6.931c1.913,1.912 5.018,1.912 6.931,-0l6.798,-6.799Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.728,61.108c1.912,-1.913 1.912,-5.018 -0,-6.931c-1.913,-1.913 -5.019,-1.913 -6.931,-0l-6.799,6.798c-1.912,1.913 -1.912,5.019 0,6.931c1.913,1.913 5.019,1.913 6.931,0l6.799,-6.798Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.682,54.177c-1.913,-1.913 -5.018,-1.913 -6.931,-0c-1.912,1.913 -1.912,5.018 0,6.931l6.798,6.798c1.913,1.913 5.019,1.913 6.931,0c1.913,-1.912 1.913,-5.018 0,-6.931l-6.798,-6.798Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M4.901,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,-0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M18.929,11.142c-1.912,-1.912 -5.018,-1.912 -6.931,0c-1.912,1.913 -1.912,5.019 0,6.931l6.799,6.799c1.912,1.912 5.018,1.912 6.931,-0c1.912,-1.913 1.912,-5.019 -0,-6.931l-6.799,-6.799Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.108,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c-0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c-0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+
+    <template v-if="mode == 'dark'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_dark"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.901,2.196 -4.901,4.901c0,2.705 2.197,4.901 4.901,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.662,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.989,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.732,61.103c1.91,-1.91 1.91,-5.011 0,-6.921l-0.009,-0.01c-1.91,-1.91 -5.012,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.909,1.91 5.011,1.91 6.92,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.672,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.52,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l-0,-0.01c-0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.901,2.196 -4.901,4.901c0,2.704 2.197,4.9 4.901,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.73,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 -0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.098,34.623c-2.699,0 -4.891,2.192 -4.891,4.892l-0,0.019c-0,2.699 2.192,4.891 4.891,4.891c2.7,0 4.892,-2.192 4.892,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.892,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+
+    <template v-if="mode == 'darkest'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_darkest"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><path d="M39.315,23.791c8.684,-0 15.734,7.05 15.734,15.733c0,8.684 -7.05,15.734 -15.734,15.734c-8.683,0 -15.733,-7.05 -15.733,-15.734c-0,-8.683 7.05,-15.733 15.733,-15.733Zm0,4.737c6.069,0 10.997,4.927 10.997,10.996c-0,6.069 -4.928,10.996 -10.997,10.996c-6.068,0 -10.996,-4.927 -10.996,-10.996c0,-6.069 4.928,-10.996 10.996,-10.996Z" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.216,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.9,2.196 -4.9,4.901c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.666,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.99,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.737,61.103c1.909,-1.91 1.909,-5.011 -0,-6.921l-0.01,-0.01c-1.91,-1.91 -5.011,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.91,1.91 5.011,1.91 6.921,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.676,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.524,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l0,-0.01c0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.216,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901c-0,2.704 2.196,4.9 4.9,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.734,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.103,34.623c-2.7,0 -4.892,2.192 -4.892,4.892l-0,0.019c-0,2.699 2.192,4.891 4.892,4.891c2.699,0 4.891,-2.192 4.891,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.891,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+</a>
+
+<script>
+(function() {
+    const LOCAL_STORAGE_KEY = 'piccoloThemeMode'
+
+    var initialMode = localStorage.getItem(LOCAL_STORAGE_KEY)
+
+    if (initialMode) {
+        // Make sure the value in local storage is valid
+        if (['light', 'dark', 'darkest'].indexOf(initialMode) == -1) {
+            initialMode = 'light'
+            localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
+        }
+    } else {
+        // Check if the client prefers dark mode
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            initialMode = 'dark'
+        } else {
+            initialMode = 'light'
+        }
+        localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
+    }
+
+    document.documentElement.dataset.mode = initialMode
+
+    PetiteVue.createApp({
+        'mode': initialMode,
+        handleClick() {
+            let currentMode = this.mode
+
+            if (currentMode == 'light') {
+                this.mode = 'dark'
+            } else if (currentMode == 'dark') {
+                this.mode = 'darkest'
+            } else if (currentMode == 'darkest') {
+                this.mode = 'light'
+            }
+
+            document.documentElement.dataset.mode = this.mode
+            localStorage.setItem(LOCAL_STORAGE_KEY, this.mode)
+
+            console.log(this.mode)
+        }
+    }).mount('#mode_toggle')
+})()
+</script>
+            <p class="mobile_search_link">
+                <a href="search.html" title="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+                        <path d="M14.873 40.009c-2.315-3.943-3.642-8.532-3.642-13.429C11.231 11.91 23.141 0 37.811 0s26.58 11.91 26.58 26.58-11.91 26.58-26.58 26.58a26.44 26.44 0 0 1-14.277-4.161L9.739 62.794a3.12 3.12 0 0 1-4.413 0L.913 58.382c-1.217-1.218-1.217-3.196 0-4.413l13.96-13.96zM37.811 8.054c10.225 0 18.526 8.301 18.526 18.526s-8.301 18.526-18.526 18.526-18.526-8.301-18.526-18.526S27.586 8.054 37.811 8.054z" fill="#fff" />
+                    </svg>
+                </a>
+            </p>
+        
+
+        <div class="searchbox_wrapper">
+            
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_one.html">Class 1 : Welcome to Python Programming!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_two.html">Class 2 : Programmers Are Lazy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Class 3 : Let’s Get Those Turtles Thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_four.html">Class 4 : Let’s Write A Program Together</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix : Python Information That Doesn’t Fit In Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference Materials</a></li>
+</ul>
+
+        </div>
+      </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="class-3-let-s-get-those-turtles-thinking">
+<h1>Class 3 : Let’s Get Those Turtles Thinking<a class="headerlink" href="#class-3-let-s-get-those-turtles-thinking" title="Permalink to this heading">¶</a></h1>
+<p>In our last class we used a Python list to help us get multiple turtles drawing on the screen. We could keep adding turtles to our hearts content and the program would faithfully make each turtle draw our flower. This worked very well drawing the well controlled structure of the flower. But what if we want to draw something that’s randomly generated, something where the turtles draw something and we don’t know ahead of time what that will be? How can we use what we know already to help us do that? Let’s teach our program how to make decisions and do things on it’s own. Here is an image of one possible graphical outcome for our class:</p>
+<img alt="_images/random_turtles.png" src="_images/random_turtles.png" />
+<section id="new-turtle-drawing-functions">
+<h2>New Turtle Drawing Functions<a class="headerlink" href="#new-turtle-drawing-functions" title="Permalink to this heading">¶</a></h2>
+<p>We’re going to create a new program where our turtles use some new drawing functions and new modules to create a randomly drawn image. Let’s learn the new turtle drawing functions first. So let’s start out by starting <strong>Idle</strong>, opening a new program editor window and creating a new Python program. In this new program let’s start as we’ve done before by entering this Python statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+</pre></div>
+</div>
+<p>Save this program to a new file name, somewhere you can remember where to find it.</p>
+<section id="get-the-turtle-screen">
+<h3>Get The Turtle Screen<a class="headerlink" href="#get-the-turtle-screen" title="Permalink to this heading">¶</a></h3>
+<p>The first new turtle drawing function we’re going to learn isn’t really about the turtles at all, but about the screen they draw on. Up until now we haven’t cared to much about the screen the turtles are drawing on, we’ve just let the turtles create it as needed and away we go. But now we want to modify something about the screen. In order to do that we have to first get the screen in a manner that we can change it. As with everything we do with Python programming, any time we want to get something so we can modify it, we save it to a variable. To get the screen we enter the following into our new program:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">screen</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This calls another function of our turtle module, <strong>Screen()</strong>, which gets the screen the module will use to draw turtles on, and saves it in the newly created variable <strong>screen</strong>. Notice how the <strong>Screen()</strong> function of the turtle module has it’s first letter capitalized, like when we create a turtle with <strong>Turtle()</strong>.</p>
+</section>
+<section id="set-the-screen-size">
+<h3>Set The Screen Size<a class="headerlink" href="#set-the-screen-size" title="Permalink to this heading">¶</a></h3>
+<p>Until now we’ve let the turtle module create our window to be whatever size it wants. We can control this using the <strong>setup()</strong> function of a turtle. I’m not sure why this is a turtle function instead of a screen function, but sometimes programming is like that. This function looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">turtle</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This Python statement sets our turtle drawing window to be 1024 pixels wide by 768 pixels tall.</p>
+</section>
+<section id="set-the-background-color-of-the-screen">
+<h3>Set The Background Color Of The Screen<a class="headerlink" href="#set-the-background-color-of-the-screen" title="Permalink to this heading">¶</a></h3>
+<p>Now that we have a variable that represents the screen, we can modify a feature of it. We’re going to change the background color from white to some other color. We do this using this Python statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">screen</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;#FFFFE0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This statement shows how to use the <strong>screen</strong> variable and call one it’s functions, <strong>bgcolor()</strong> (short for background color) to set the background color on the screen. If we save and run this you’ll see an empty turtle window that has a light yellow color instead of white. The light yellow color is the <strong>“#FFFFE0”</strong> we passed as a parameter to the <strong>bgcolor()</strong> function. So what does <strong>“#FFFFE0”</strong> mean? We could have just passed “yellow” to the <strong>bgcolor()</strong> function, like we’ve done with our turtles, but that yellow is pretty intense and I wanted something lighter for a background color. So we’ve used a different way to define a color, this way comes right out of <strong>HTML</strong> (web page) coding. The <strong>“#FFFFE0”</strong> value represents setting the RGB (Red / Green / Blue) color value, each two character portion of the string FFFFE0 represents a value from 0 - 255 in hexadecimal (base 16, common in programming). This breaks down like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FF</span> <span class="n">FF</span> <span class="n">E0</span>
+ <span class="o">|</span>  <span class="o">|</span>  <span class="o">|</span>
+ <span class="o">|</span>  <span class="o">|</span>  <span class="o">+---</span> <span class="mi">224</span> <span class="n">Blue</span>
+ <span class="o">|</span>  <span class="o">+------</span> <span class="mi">255</span> <span class="n">Green</span>
+ <span class="o">+---------</span> <span class="mi">255</span> <span class="n">Red</span>
+</pre></div>
+</div>
+<p>This somewhat complex color code let’s us pick a color much more precisely than the limited pre-defined set of named colors (like “red” or “yellow”) that are inside the turtle module.</p>
+</section>
+<section id="turtles-are-rubber-stamps">
+<h3>Turtles Are Rubber Stamps!<a class="headerlink" href="#turtles-are-rubber-stamps" title="Permalink to this heading">¶</a></h3>
+<p>We can also use our turtles as rubber stamps! By this I mean we can tell the turtle to leave a permanent image of itself at any point the turtle exists on the screen. We do this by using the turtle <strong>stamp()</strong> function, which looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">turtle</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Running this Python statement makes a “stamp” of our turtle on the screen. When next we move the turtle you’ll see the stamp it left behind, kind of like bread crumbs of where its been. Let’s see how this works by entering the following into our program to make it look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">)</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;#FFFFE0&quot;</span><span class="p">)</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">side</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">t1</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">t1</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>
+        <span class="n">t1</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When we save and run this program we should end up with a box outlined in red and a turtle “stamp” at each corner. The screen should look like this:</p>
+<img alt="_images/stamping.png" src="_images/stamping.png" />
+</section>
+</section>
+<section id="new-modules-and-functions">
+<h2>New Modules and Functions<a class="headerlink" href="#new-modules-and-functions" title="Permalink to this heading">¶</a></h2>
+<p>In order to make our new program have random behavior we need to import a new module, logically enough called “random”. The random module, like the turtle module, brings additional functionality into our program so we can use it. Add this line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+<p>at the top of our program right under the import turtle statement. Just like the turtle module this doesn’t do anything immediately, but now our program has access to the functions in the random module.</p>
+<section id="pick-a-number-any-number">
+<h3>Pick a Number, Any Number<a class="headerlink" href="#pick-a-number-any-number" title="Permalink to this heading">¶</a></h3>
+<p>The module random, as the name suggests, create randomness. We’ll use the functions in the random module to make our turtle drawing less predictable, and maybe more interesting. One of those functions is called <strong>randint()</strong>, and it generates random integers. If we jump over to our <strong>Idle</strong> interactive window we can try out the <strong>randint()</strong> function. Enter this into our <strong>Idle</strong> interactive window to try the <strong>randint()</strong> function out:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">10</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>You can see that just like the functions in the turtle module we have to use the module name random and a “.” character before the function we want. In the above lines we’ve used the <strong>randint()</strong> function twice and it returned a different number each time. This is what <strong>randint()</strong> does, it returns randomly generated integers. The two numbers we passed to it (0 and 10) are parameters telling <strong>randint()</strong> the beginning and ending limits of numbers we want it to generate. In our case we want integer numbers ranging from 0 to 10, including both 0 and 10. Random number generators are used a lot in game programming to create unexpected behavior and challenges for the player.</p>
+</section>
+</section>
+<section id="let-s-get-our-program-going">
+<h2>Let’s Get Our Program Going<a class="headerlink" href="#let-s-get-our-program-going" title="Permalink to this heading">¶</a></h2>
+<p>Let’s get our random turtle program going so we can add things to it. Make your program look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;#FFFFE0&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">move</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">a_turtle</span> <span class="ow">in</span> <span class="n">turtles</span><span class="p">:</span>
+                <span class="n">move_turtle</span><span class="p">(</span><span class="n">a_turtle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we save and try to run the above program we’ll get errors. Why is this? Well for a couple of reasons, we have no variable named <strong>turtles</strong> and the function <strong>move_turtle()</strong> isn’t defined. Let’s fix that. Like our flower program we want to create a list of turtles, and we’ll need to define our <strong>move_turtle()</strong> function. So make your program look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;#FFFFE0&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">move_turtle</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="n">turtles</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">move</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">a_turtle</span> <span class="ow">in</span> <span class="n">turtles</span><span class="p">:</span>
+                <span class="n">move_turtle</span><span class="p">(</span><span class="n">a_turtle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now when we save and run our program it doesn’t crash with an error, but it doesn’t do anything other than open a light yellow window. Why is that? Again, a couple of reasons. We haven’t defined any turtles in our <strong>turtles</strong> list variable. We’ve also defined our <strong>move_turtle()</strong> function, but it doesn’t do anything. The <strong>pass</strong> statement is just a placeholder that makes program work, but doesn’t provide any functionality. First things first, let’s create our turtles.</p>
+<section id="getting-a-variable-from-a-function">
+<h3>Getting A Variable From A Function<a class="headerlink" href="#getting-a-variable-from-a-function" title="Permalink to this heading">¶</a></h3>
+<p>In our flower program when we wanted to create our turtles we did so by copying the turtle creation and setup code for every turtle we wanted. Then we put all those turtles into a list we called <strong>turtles</strong>. This works fine, but let’s do something clever and create a function to create our turtle for us. And let’s define it so we can set the color of the turtle by passing the color as a parameter to the function. Here’s a function that will do just that:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_turtle</span><span class="p">(</span><span class="n">color</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">t</span>
+</pre></div>
+</div>
+<p>Notice at the end of the <strong>create_turtle(color)</strong> definition, the “return t” statement. What does this do? This is how to return the turtle we just created for use in the rest of the program. We’ve seen this before when we used the “t1 = turtle.Turtle()” statement. The “turtle.Turtle()” function <em>returns</em> a turtle, and that returned turtle is assigned to the variable t1. In our case we’re returning the turtle we created, what we called <em>t</em>, so it can be saved someplace in our program and used later.</p>
+<p>Now we have a function that will create a turtle for us that will draw with the color we’ve asked for. But we need to create multiple turtles to put into our <strong>turtles</strong> list variable. The <strong>create_turtle()</strong> function only creates one turtle, how can we create multiple turtles with it? An easy way to do this is to create another function using <strong>create_turtles()</strong> inside a loop to create our list of turtles. Here’s a function that does that:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_turtles</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+        <span class="n">turtles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">:</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="n">create_turtle</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+                <span class="n">turtles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">turtles</span>
+</pre></div>
+</div>
+<p>Here we’ve created a function <strong>create_turtles(colors)</strong> (notice the plural on both the name of the function and the parameter, this just helps us be clear what our intent is) that creates a list of turtles. We use this function like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">]</span>
+<span class="n">turtles</span> <span class="o">=</span> <span class="n">create_turtles</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the above code we created a variable <strong>colors</strong> containing a list of four valid turtle colors. We then passed the list to our <strong>create_turtles()</strong> function. Inside that function we create an empty turtles list with the “turtles = []” statement. Then we start a <strong>for</strong> loop taking one color at a time from the <strong>colors</strong> list parameter, passes that to our <strong>create_turtle()</strong> function, which creates a turtle that draws in that color. We then use the “turtles.append(t)” statement to add the turtle to our <strong>turtles</strong> variable. The <strong>append()</strong> function is part of the functionality associated with lists, and lets us add elements to the end of the list programmatically. At the end of the loop we return our <strong>turtles</strong> list variable so it can be used later.</p>
+<p>If we save and run this program it works, but doesn’t draw anything but the last green turtle on the screen. Remember turtles are all created in the center of the screen, so all four are there, just stacked on top of each other. Let’s put some code in our <strong>move_turtle(t)</strong> function to get those turtles moving.</p>
+</section>
+<section id="moving-turtles-randomly">
+<h3>Moving Turtles Randomly<a class="headerlink" href="#moving-turtles-randomly" title="Permalink to this heading">¶</a></h3>
+<p>We want our turtles to draw randomly around the screen, so inside the <strong>draw_turtle(t)</strong> function is where we’re going to use our <strong>random.randint()</strong> function we learned about earlier. We also want to <em>stamp</em> a turtle on the screen with every move, which is where we’ll use our <strong>stamp()</strong> function. Here’s a function that will turn a turtle a random angle and move it a random distance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_turtle</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This function does a couple of things. First, it expects a turtle as a parameter variable, in the example above that parameter variable is <strong>t</strong>. The first thing the function does is use our turtle <strong>t</strong> to <strong>stamp()</strong> a turtle image on the screen. It then uses the <strong>random.randint()</strong> function to create an <strong>angle</strong> variable set to between -90 and 90 degrees. This allows our turtle to turn left or right some random amount. We pass this random <strong>angle</strong> variable to our <strong>t.turn(angle)</strong> function to turn our <strong>t</strong> turtle. We then do a similar thing to create a random <strong>distanace</strong> varible set to between 50 and 100. We use this variable in our <strong>t.forward(distance)</strong> function call to move our <strong>t</strong> turtle forward some random distance.</p>
+</section>
+<section id="our-program-so-far">
+<h3>Our Program So Far<a class="headerlink" href="#our-program-so-far" title="Permalink to this heading">¶</a></h3>
+<p>Let’s see what we’ve got for our program so far:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">)</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;#FFFFE0&quot;</span><span class="p">)</span>
+
+<span class="c1"># the number of turtles to create and what color to create them with</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">]</span>
+
+<span class="c1"># create a new turtle with a certain color</span>
+<span class="k">def</span> <span class="nf">create_turtle</span><span class="p">(</span><span class="n">color</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">t</span>
+
+<span class="c1"># create a list of turtles from a list of colors</span>
+<span class="k">def</span> <span class="nf">create_turtles</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+        <span class="n">turtles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">:</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="n">create_turtle</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+            <span class="n">turtles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">turtles</span>
+
+<span class="k">def</span> <span class="nf">move_turtle</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+
+<span class="n">turtles</span> <span class="o">=</span> <span class="n">create_turtles</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">move</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">a_turtle</span> <span class="ow">in</span> <span class="n">turtles</span><span class="p">:</span>
+                <span class="n">move_turtle</span><span class="p">(</span><span class="n">a_turtle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you save and run our program it will generate a screen that looks something like this:</p>
+<img alt="_images/stamping_1.png" src="_images/stamping_1.png" />
+<p>You probably noticed that your turtles might have wandered off the screen, sometimes never to return. How can we keep our turtles on the screen so we can see what they’re drawing? We have them make decisions so they know how to turn around if they go off the screen. This is where we use something called <em>conditionals</em> in programming, a way of making a decision based on a condition that is happening in our program.</p>
+</section>
+</section>
+<section id="conditionals">
+<h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this heading">¶</a></h2>
+<p>As we briefly talked about in our first class, the way to make programs act smarter is to have them make decisions. To do this we use something called <em>conditionals</em>. Conditionals are just a way for a program to look at something (a condition) and make a decision to do something or something else. For instance, here’s some possible Python conditional program statements:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">250</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">250</span><span class="p">:</span>
+<span class="linenos">2</span>        <span class="n">outside_box</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Here’s what’s happening in these Python statements:</p>
+<ol class="arabic simple">
+<li><p>Use the <strong>if</strong> statement to test whether the variable <strong>x</strong> is less than negative 250, or greater than positive 250</p></li>
+<li><p>If <strong>x</strong> is outside those two values, set the variable <strong>outside_box</strong> to <em>Boolean</em> True</p></li>
+</ol>
+<p>How can we use conditionals to keep our turtles inside a viewable area? First off let’s make our viewable area a box that’s inside our screen so we can see what our turtles do when they go outside that box. In our program we’ll create a variable <strong>box_size</strong> equal to the size of the box we want to make our viewable area, let’s say 500. We’ll also use one of our turtles to draw this viewable box on the screen so we can see the box edges. Let’s make our program look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">)</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;#FFFFE0&quot;</span><span class="p">)</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">]</span>
+
+<span class="n">box_size</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="k">def</span> <span class="nf">create_turtle</span><span class="p">(</span><span class="n">color</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">t</span>
+
+<span class="k">def</span> <span class="nf">create_turtles</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+        <span class="n">turtles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">:</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">create_turtle</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+            <span class="n">turtles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">turtles</span>
+
+<span class="k">def</span> <span class="nf">move_turtle</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+
+<span class="n">turtles</span> <span class="o">=</span> <span class="n">create_turtles</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">turtles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">box_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">box_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">side</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">t1</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+        <span class="n">t1</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">box_size</span><span class="p">)</span>
+
+<span class="n">t1</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">move</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">a_turtle</span> <span class="ow">in</span> <span class="n">turtles</span><span class="p">:</span>
+                <span class="n">move_turtle</span><span class="p">(</span><span class="n">a_turtle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Right under where we create our <strong>colors</strong> list we’ve created the <strong>box_size</strong> variable and set it equal to 500. Further down under where we created our <strong>turtles</strong> list variable, we’ve used the first turtle from the list, <strong>t1 = turtles[0]</strong>, to draw our viewable boundary box. After we’re done drawing the box the turtle is moved back to it’s starting position.</p>
+<p>So how do we use a conditional to keep our turtles inside the box we’ve just drawn? First things first, we need to know where the turtle is in order to figure out if it’s outside the boundary box. To do this we need another turtle function.</p>
+<section id="where-s-my-turtle">
+<h3>Where’s My Turtle<a class="headerlink" href="#where-s-my-turtle" title="Permalink to this heading">¶</a></h3>
+<p>A turtle has two functions telling us where it is in relation to the home position, (0, 0). Those functions are called <strong>xcor()</strong> and <strong>ycor()</strong>, which are short for x coordinate and y coordinate. They are used like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">xcor</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ycor</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>As you might have guessed, the <strong>t.xcor()</strong> function returns the current x coordinate of the turtle <strong>t</strong>, and <strong>t.ycor()</strong> returns the current y coordinate of the turtle.</p>
+<p>Now we have enough information to decide if a turtle is inside or outside our boundary box. We know where the edges of the boundary box are in relation to where we started drawing it, plus and minus 250 pixels in relation to the starting position of the turtles, (0, 0). We also can figure out where our turtles are any time we want, which we can compare to the boundary box edges. Let’s create a function that returns True if the turtle is outside the box and False otherwise. The function will need the turtle to test and information about the box. That function looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_turtle_outside_box</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="n">outside_box</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">xcor</span><span class="p">()</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ycor</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">):</span>
+                <span class="n">outside_box</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">size</span> <span class="o">/</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">):</span>
+                <span class="n">outside_box</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="n">outside_box</span>
+</pre></div>
+</div>
+<p>This function expects a turtle to be passed as the first parameter and a number for the size of the boundary box as the second parameter. It then sets the return variable <strong>outside_box</strong> initially to False. It then creates the <strong>x</strong> and <strong>y</strong> variables, setting them to the x and y coordinates of the passed in turtle <strong>t</strong> respectively. Then using an <strong>if</strong> statement it compares the <strong>x</strong> and <strong>y</strong> variables to the <strong>size</strong> divided by 2. Why is the <strong>size</strong> divided by 2? Because my intention is to pass the <strong>box_size</strong> variable to this function, and the boundary box is centered on the screen, with half (250 pixels) on each side of that.</p>
+<p>Now that we have this function, how can we use it? Inside our inner most loop we move our turtle, at which point it might be outside the boundary box, so this seems like a good place to use our <strong>is_turtle_outside_box()</strong> function. Here’s just the looping portion of our current program showing the inclusion of the new function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">move</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">a_turtle</span> <span class="ow">in</span> <span class="n">turtles</span><span class="p">:</span>
+                <span class="n">move_turtle</span><span class="p">(</span><span class="n">a_turtle</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">is_turtle_outside_box</span><span class="p">(</span><span class="n">a_turtle</span><span class="p">,</span> <span class="n">box_size</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+                        <span class="n">a_turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
+                        <span class="n">a_turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What we’ve done is after our <strong>move_turtle()</strong> function call, we added an <strong>if</strong> statement using our <strong>is_turtle_outside_box()</strong> function to figure out if our turtle <strong>t</strong> is outside the boundary box. If the return value of <strong>is_turtle_outside_box()</strong> is True, we turn our turtle <strong>t</strong> around 180 degrees from where it’s currently facing and move it 100 pixels back inside the boundary box. Then the loop moves onto the next turtle and the next move for all turtles.</p>
+<p>Here’s our completed program with comments:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># change the color of the background</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;#FFFFE0&quot;</span><span class="p">)</span>
+
+<span class="c1"># the number of turtles to create and what color to create them with</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">]</span>
+
+<span class="c1"># size of our box</span>
+<span class="n">box_size</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="c1"># create a new turtle with a certain color</span>
+<span class="k">def</span> <span class="nf">create_turtle</span><span class="p">(</span><span class="n">color</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">t</span>
+
+<span class="c1"># create a list of turtles from a list of colors</span>
+<span class="k">def</span> <span class="nf">create_turtles</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+        <span class="n">turtles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">:</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="n">create_turtle</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+                <span class="n">turtles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">turtles</span>
+
+
+<span class="c1"># stamp and move the turtle</span>
+<span class="k">def</span> <span class="nf">move_turtle</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+
+<span class="c1"># is the turtle outside the box?</span>
+<span class="k">def</span> <span class="nf">is_turtle_outside_box</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="n">outside_box</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">xcor</span><span class="p">()</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ycor</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">size</span> <span class="o">/</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>  <span class="ow">or</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">):</span>
+                <span class="n">outside_box</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">size</span> <span class="o">/</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">):</span>
+                <span class="n">outside_box</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="n">outside_box</span>
+
+<span class="c1"># create our list of turtles</span>
+<span class="n">turtles</span> <span class="o">=</span> <span class="n">create_turtles</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+
+<span class="c1"># use the first turtle to draw our boundary box</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">turtles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">box_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">box_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">side</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">t1</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+        <span class="n">t1</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">box_size</span><span class="p">)</span>
+
+<span class="n">t1</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+
+<span class="c1"># move all the turtles a hundred times</span>
+<span class="k">for</span> <span class="n">move</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+
+        <span class="c1"># move a particular turtle from our list of turtles</span>
+        <span class="k">for</span> <span class="n">a_turtle</span> <span class="ow">in</span> <span class="n">turtles</span><span class="p">:</span>
+                <span class="n">move_turtle</span><span class="p">(</span><span class="n">a_turtle</span><span class="p">)</span>
+
+                <span class="c1"># is the turtle outside the boundary box?</span>
+                <span class="k">if</span> <span class="n">is_turtle_outside_box</span><span class="p">(</span><span class="n">a_turtle</span><span class="p">,</span> <span class="n">box_size</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+
+                        <span class="c1"># turn the turtle around and move it back</span>
+                        <span class="n">a_turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
+                        <span class="n">a_turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When we run our program the screen should look something like this:</p>
+<img alt="_images/random_turtles.png" src="_images/random_turtles.png" />
+</section>
+</section>
+<section id="congratulations">
+<h2>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this heading">¶</a></h2>
+<p>You’re all getting to be real Python programmers now! You’ve created a program that draws with turtles, and makes decisions based on where those turtles are, very, very cool!</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    
+        <div id="show_right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon"><</span><span>Page contents<span></a></p>
+        </div>
+
+        <div id="right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">></span><span>Page contents:<span></a></p>
+            <div class="page_toc">
+                <ul>
+<li><a class="reference internal" href="#">Class 3 : Let’s Get Those Turtles Thinking</a><ul>
+<li><a class="reference internal" href="#new-turtle-drawing-functions">New Turtle Drawing Functions</a><ul>
+<li><a class="reference internal" href="#get-the-turtle-screen">Get The Turtle Screen</a></li>
+<li><a class="reference internal" href="#set-the-screen-size">Set The Screen Size</a></li>
+<li><a class="reference internal" href="#set-the-background-color-of-the-screen">Set The Background Color Of The Screen</a></li>
+<li><a class="reference internal" href="#turtles-are-rubber-stamps">Turtles Are Rubber Stamps!</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#new-modules-and-functions">New Modules and Functions</a><ul>
+<li><a class="reference internal" href="#pick-a-number-any-number">Pick a Number, Any Number</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#let-s-get-our-program-going">Let’s Get Our Program Going</a><ul>
+<li><a class="reference internal" href="#getting-a-variable-from-a-function">Getting A Variable From A Function</a></li>
+<li><a class="reference internal" href="#moving-turtles-randomly">Moving Turtles Randomly</a></li>
+<li><a class="reference internal" href="#our-program-so-far">Our Program So Far</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conditionals">Conditionals</a><ul>
+<li><a class="reference internal" href="#where-s-my-turtle">Where’s My Turtle</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#congratulations">Congratulations!</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+    
+
+      <div class="clearer"></div>
+    </div>
+    <div class="button_nav_wrapper">
+        <div class="button_nav">
+            <div class="left">
+                
+                <a href="class_two.html">
+                    <span class="icon"><</span><span>Class 2 : Programmers Are Lazy</span></a>
+                
+            </div>
+
+            <div class="right">
+                
+                    <a href="class_four.html"><span>Class 4 : Let’s Write A Program Together</span><span class="icon">></span></a>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Doug Farrell.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    </div>
+
+<p id="theme_credit">Styled using the <a href="https://github.com/piccolo-orm/piccolo_theme">Piccolo Theme</a></p>
+  </body>
+</html>
