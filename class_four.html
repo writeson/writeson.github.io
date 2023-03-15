@@ -1,357 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<!DOCTYPE html>
 
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
-    <title>Class 4 : Let’s Write A Program Together &#8212; Python 3 Drawing with Turtles 1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=0.7.0-1" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/js/theme.js"></script>
-    <script src="_static/js/petite-vue.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Class 4 : Let’s Write A Program Together &mdash; Python Class 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Python Class 1.0.0 documentation" href="index.html" />
     <link rel="next" title="Appendix : Python Information That Doesn’t Fit In Class" href="appendix.html" />
     <link rel="prev" title="Class 3 : Let’s Get Those Turtles Thinking" href="class_three.html" /> 
-  </head><body data-dark_mode_code_blocks="true">
-
-<div id="top_nav">
-    
-
-    <nav>
-        
-            
-        
-
-        <p id="toggle_sidebar">
-            <a href="#" title="Toggle sidebar">|||</a>
-        </p>
-        <h1><a href="index.html" title="Go to homepage">Python 3 Drawing with Turtles 1 documentation</a></h1>
-
-        <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
-    <template v-if="mode == 'light'">
-        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_light"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M67.48,18.073c1.913,-1.912 1.913,-5.018 0,-6.931c-1.912,-1.912 -5.018,-1.912 -6.931,0l-6.798,6.799c-1.912,1.912 -1.912,5.018 0,6.931c1.913,1.912 5.018,1.912 6.931,-0l6.798,-6.799Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.728,61.108c1.912,-1.913 1.912,-5.018 -0,-6.931c-1.913,-1.913 -5.019,-1.913 -6.931,-0l-6.799,6.798c-1.912,1.913 -1.912,5.019 0,6.931c1.913,1.913 5.019,1.913 6.931,0l6.799,-6.798Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.682,54.177c-1.913,-1.913 -5.018,-1.913 -6.931,-0c-1.912,1.913 -1.912,5.018 0,6.931l6.798,6.798c1.913,1.913 5.019,1.913 6.931,0c1.913,-1.912 1.913,-5.018 0,-6.931l-6.798,-6.798Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M4.901,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,-0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M18.929,11.142c-1.912,-1.912 -5.018,-1.912 -6.931,0c-1.912,1.913 -1.912,5.019 0,6.931l6.799,6.799c1.912,1.912 5.018,1.912 6.931,-0c1.912,-1.913 1.912,-5.019 -0,-6.931l-6.799,-6.799Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.108,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c-0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c-0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g></g></g></svg>
-    </template>
-
-    <template v-if="mode == 'dark'">
-        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_dark"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.901,2.196 -4.901,4.901c0,2.705 2.197,4.901 4.901,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.662,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.989,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.732,61.103c1.91,-1.91 1.91,-5.011 0,-6.921l-0.009,-0.01c-1.91,-1.91 -5.012,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.909,1.91 5.011,1.91 6.92,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.672,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.52,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l-0,-0.01c-0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.901,2.196 -4.901,4.901c0,2.704 2.197,4.9 4.901,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.73,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 -0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.098,34.623c-2.699,0 -4.891,2.192 -4.891,4.892l-0,0.019c-0,2.699 2.192,4.891 4.891,4.891c2.7,0 4.892,-2.192 4.892,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.892,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
-    </template>
-
-    <template v-if="mode == 'darkest'">
-        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_darkest"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><path d="M39.315,23.791c8.684,-0 15.734,7.05 15.734,15.733c0,8.684 -7.05,15.734 -15.734,15.734c-8.683,0 -15.733,-7.05 -15.733,-15.734c-0,-8.683 7.05,-15.733 15.733,-15.733Zm0,4.737c6.069,0 10.997,4.927 10.997,10.996c-0,6.069 -4.928,10.996 -10.997,10.996c-6.068,0 -10.996,-4.927 -10.996,-10.996c0,-6.069 4.928,-10.996 10.996,-10.996Z" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.216,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.9,2.196 -4.9,4.901c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.666,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.99,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.737,61.103c1.909,-1.91 1.909,-5.011 -0,-6.921l-0.01,-0.01c-1.91,-1.91 -5.011,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.91,1.91 5.011,1.91 6.921,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.676,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.524,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l0,-0.01c0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.216,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901c-0,2.704 2.196,4.9 4.9,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.734,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.103,34.623c-2.7,0 -4.892,2.192 -4.892,4.892l-0,0.019c-0,2.699 2.192,4.891 4.892,4.891c2.699,0 4.891,-2.192 4.891,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.891,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
-    </template>
-</a>
-
-<script>
-(function() {
-    const LOCAL_STORAGE_KEY = 'piccoloThemeMode'
-
-    var initialMode = localStorage.getItem(LOCAL_STORAGE_KEY)
-
-    if (initialMode) {
-        // Make sure the value in local storage is valid
-        if (['light', 'dark', 'darkest'].indexOf(initialMode) == -1) {
-            initialMode = 'light'
-            localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
-        }
-    } else {
-        // Check if the client prefers dark mode
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            initialMode = 'dark'
-        } else {
-            initialMode = 'light'
-        }
-        localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
-    }
-
-    document.documentElement.dataset.mode = initialMode
-
-    PetiteVue.createApp({
-        'mode': initialMode,
-        handleClick() {
-            let currentMode = this.mode
-
-            if (currentMode == 'light') {
-                this.mode = 'dark'
-            } else if (currentMode == 'dark') {
-                this.mode = 'darkest'
-            } else if (currentMode == 'darkest') {
-                this.mode = 'light'
-            }
-
-            document.documentElement.dataset.mode = this.mode
-            localStorage.setItem(LOCAL_STORAGE_KEY, this.mode)
-
-            console.log(this.mode)
-        }
-    }).mount('#mode_toggle')
-})()
-</script>
-            <p class="mobile_search_link">
-                <a href="search.html" title="Search">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
-                        <path d="M14.873 40.009c-2.315-3.943-3.642-8.532-3.642-13.429C11.231 11.91 23.141 0 37.811 0s26.58 11.91 26.58 26.58-11.91 26.58-26.58 26.58a26.44 26.44 0 0 1-14.277-4.161L9.739 62.794a3.12 3.12 0 0 1-4.413 0L.913 58.382c-1.217-1.218-1.217-3.196 0-4.413l13.96-13.96zM37.811 8.054c10.225 0 18.526 8.301 18.526 18.526s-8.301 18.526-18.526 18.526-18.526-8.301-18.526-18.526S27.586 8.054 37.811 8.054z" fill="#fff" />
-                    </svg>
-                </a>
-            </p>
-        
-
-        <div class="searchbox_wrapper">
-            
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-        </div>
-    </nav>
-</div>
-
-    
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="class_one.html">Class 1 : Welcome to Python Programming!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class_two.html">Class 2 : Programmers Are Lazy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class_three.html">Class 3 : Let’s Get Those Turtles Thinking</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Class 4 : Let’s Write A Program Together</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix : Python Information That Doesn’t Fit In Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference Materials</a></li>
-</ul>
-
-        </div>
-      </div>
-
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="appendix.html" title="Appendix : Python Information That Doesn’t Fit In Class"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="class_three.html" title="Class 3 : Let’s Get Those Turtles Thinking"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Python Class 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
 
     <div class="document">
       <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
-  <section id="class-4-let-s-write-a-program-together">
-<h1>Class 4 : Let’s Write A Program Together<a class="headerlink" href="#class-4-let-s-write-a-program-together" title="Permalink to this heading">¶</a></h1>
-<p>For this class we’re going to write a “Guess My Number” game program. In this game the program will pick a random number from 1 to 10 and the player will try to guess what the number is. The program will respond in different ways depending on whether the player guessed correctly or incorrectly. The player can also end the game whenever they want by telling the program “quit”. The interesting part of this program is you’re going to tell me how to write it instead of the other way around.</p>
+  <div class="section" id="class-4-let-s-write-a-program-together">
+<h1>Class 4 : Let&#8217;s Write A Program Together<a class="headerlink" href="#class-4-let-s-write-a-program-together" title="Permalink to this headline">¶</a></h1>
+<p>For this class we&#8217;re going to write a &#8220;Guess My Number&#8221; game program. In this game the program will pick a random number from 1 to 10 and the player will try to guess what the number is. The program will respond in different ways depending on whether the player guessed correctly or incorrectly. The player can also end the game whenever they want by telling the program &#8220;quit&#8221;. The interesting part of this program is you&#8217;re going to tell me how to write it instead of the other way around.</p>
 <p>But before we get started, we need to learn a few more things about Python to help us build our game.</p>
-<section id="getting-information-from-the-player">
-<h2>Getting Information From The Player<a class="headerlink" href="#getting-information-from-the-player" title="Permalink to this heading">¶</a></h2>
-<p>In order to play our game the player has to interact with it. We need a way to get guesses from the player so the game can compare its secret number to the players guess. To do this we use the <strong>input()</strong> function. The <strong>input()</strong> function let’s us ask the user for some information, and then wait for them to enter something using the keyboard. In the Python interactive mode it looks like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter a number: &quot;</span><span class="p">)</span>
+<div class="section" id="getting-information-from-the-player">
+<h2>Getting Information From The Player<a class="headerlink" href="#getting-information-from-the-player" title="Permalink to this headline">¶</a></h2>
+<p>In order to play our game the player has to interact with it. We need a way to get guesses from the player so the game can compare its secret number to the players guess. To do this we use the <strong>raw_input()</strong> function. The <strong>raw_input()</strong> function let&#8217;s us ask the user for some information, and then wait for them to enter something using the keyboard. In the Python interactive mode it looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">guess</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Please enter a number: &quot;</span><span class="p">)</span>
 <span class="go">Please enter a number:</span>
 </pre></div>
 </div>
-<p>At the point where the <strong>input()</strong> function runs, the cursor is at the end of the “Please enter a number: “ string, waiting for you to type something. You can type anything you want, when you hit the &lt;ENTER&gt; key whatever you typed will be assigned to the <strong>guess</strong> variable as a string. This is a very simple way to get input from the user using the keyboard.</p>
-</section>
-<section id="converting-a-string-to-a-number">
-<h2>Converting A String To A Number<a class="headerlink" href="#converting-a-string-to-a-number" title="Permalink to this heading">¶</a></h2>
-<p>We haven’t talked about this yet, but there is a difference between a string like “10” and the number 10. Try this in the interactive mode:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">==</span> <span class="mi">10</span>
+<p>At the point where the <strong>raw_input()</strong> function runs, the cursor is at the end of the &#8220;Please enter a number:&#8221; string, waiting for you to type something. You can type anything you want, when you hit the &lt;ENTER&gt; key whatever you typed will be assigned to the <strong>guess</strong> variable as a string. This is a very simple way to get input from the user using the keyboard.</p>
+</div>
+<div class="section" id="converting-a-string-to-a-number">
+<h2>Converting A String To A Number<a class="headerlink" href="#converting-a-string-to-a-number" title="Permalink to this headline">¶</a></h2>
+<p>We haven&#8217;t talked about this yet, but there is a difference between a string like &#8220;10&#8221; and the number 10. Try this in the interactive mode:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">==</span> <span class="mi">10</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;10&quot;</span> <span class="o">==</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;10&quot;</span> <span class="o">==</span> <span class="mi">10</span>
 <span class="go">False</span>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<p>On the first line we are comparing the two number 10’s to each other to see if they are equal. Python knows they are, so it responds by printing <strong>True</strong> to the screen. But the next comparison, “10” == 10, why does Python respond with False? The simple answer is Python doesn’t think they’re equal. But why aren’t they equal? This can be confusing, “10” looks like the number ten. And 10 definitely looks like the number ten as well. For Python however, this isn’t true. The number 10 is exactly that, the numerical value 10. The string “10” is just a string, it has no numerical value, even though “10” looks like ten to us. The difference is the representation. The “10” represents a string to Python, it doesn’t know that string represents ten to us. The 10 however does mean numerical ten to Python, ten things, ten cars, ten whatever.</p>
-<p>What does this have to do with our game? A lot actually. When the game starts the program will randomly pick a <em>number</em> from 1 to 10, not a string, a number. However when the player types something into our <strong>guess = input(“Please enter a number: “)</strong> prompt, <strong>guess</strong> is a string variable. Even if the player enters a “1” and then a “0” and then hits enter, the <strong>guess</strong> variable will be a string. This is where a problem comes in. Let’s say we call the game’s variable for its number <strong>secret_number</strong>. If we write some Python code that compares them, like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">secret_number</span> <span class="o">==</span> <span class="n">guess</span><span class="p">:</span>
+<p>On the first line we are comparing the two number 10&#8217;s to each other to see if they are equal. Python knows they are, so it responds by printing <strong>True</strong> to the screen. But the next comparison, &#8220;10&#8221; == 10, why does Python respond with False? The simple answer is Python doesn&#8217;t think they&#8217;re equal. But why aren&#8217;t they equal? This can be confusing, &#8220;10&#8221; looks like the number ten. And 10 definitely looks like the number ten as well. For Python however, this isn&#8217;t true. The number 10 is exactly that, the numerical value 10. The string &#8220;10&#8221; is just a string, it has no numerical value, even though &#8220;10&#8221; looks like ten to us. The difference is in the representation. The &#8220;10&#8221; represents a string to Python, it doesn&#8217;t know that string represents ten to us. The 10 however does mean numerical ten to Python, ten things, ten cars, ten whatever.</p>
+<p>What does this have to do with our game? A lot actually. When the game starts the program will randomly pick a <em>number</em> from 1 to 10, not a string, a number. However when the player types something into our <strong>guess = raw_input(&#8220;Please enter a number: &#8221;)</strong> prompt, <strong>guess</strong> is a string variable. Even if the player enters a &#8220;1&#8221; and then a &#8220;0&#8221; and then hits enter, the <strong>guess</strong> variable will be a string. This is where a problem comes in. Let&#8217;s say we call the game&#8217;s variable for its number <strong>secret_number</strong>. If we write some Python code that compares them, like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>if secret_number == guess:
 </pre></div>
 </div>
-<p>it will fail because comparing a string to a number will always be <strong>False</strong>. We need to make Python compare two of the same kinds of things. For our game, both things need to be numbers. We need to convert the player’s <strong>guess</strong> variable to a number. Python can do this using the <strong>int()</strong> function. It looks like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">guess_number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
+<p>it will fail because comparing a string to a number will always be <strong>False</strong>. We need to make Python compare two of the same kinds of things. For our game, both things need to be numbers. We need to convert the player&#8217;s <strong>guess</strong> variable to a number. Python can do this using the <strong>int()</strong> function. It looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">guess_number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>With this code we’re taking the player’s input, <strong>guess</strong>, which could be something like “8”, and converting it to the numerical value 8 and assigning it to the new variable <strong>guess_number</strong>. Now when we compare <strong>guess_number</strong> with <strong>secret_number</strong>, they are the same kind of thing (numbers) and will compare correctly when we write Python code like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">guess_number</span> <span class="o">==</span> <span class="n">secret_number</span><span class="p">:</span>
+<p>With this code we&#8217;re taking the player&#8217;s input, <strong>guess</strong>, which could be something like &#8220;8&#8221;, and converting it to the numerical value 8 and assigning it to the new variable <strong>guess_number</strong>. Now when we compare <strong>guess_number</strong> with <strong>secret_number</strong>, they are the same kind of thing (numbers) and will compare correctly when we write Python code like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>if guess_number == secret_number:
 </pre></div>
 </div>
-</section>
-<section id="another-kind-of-loop">
-<h2>Another Kind Of Loop<a class="headerlink" href="#another-kind-of-loop" title="Permalink to this heading">¶</a></h2>
-<p>We’ve only used the <strong>for</strong> loop so far because it’s handy when you know ahead of time how many times you want to loop. For our game program we won’t know ahead of time how many guesses it will take our player to guess the <strong>secret_number</strong>. We also don’t know how many times they’ll want to play the game. This is a perfect use for the other loop Python supports, the <strong>while</strong> loop. The <strong>while</strong> loop is called a <em>conditional loop</em> because it will continue looping until some condition it is testing is True. Here’s an example of a <strong>while</strong> loop:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">game_running</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="k">while</span> <span class="n">game_running</span><span class="p">:</span>
-        <span class="c1"># run some Python statements</span>
+</div>
+<div class="section" id="another-kind-of-loop">
+<h2>Another Kind Of Loop<a class="headerlink" href="#another-kind-of-loop" title="Permalink to this headline">¶</a></h2>
+<p>We&#8217;ve only used the <strong>for</strong> loop so far because it&#8217;s handy when you know ahead of time how many times you want to loop. For our game program we won&#8217;t know ahead of time how many guesses it will take our player to guess the <strong>secret_number</strong>. We also don&#8217;t know how many times they&#8217;ll want to play the game. This is a perfect use for the other loop Python supports, the <strong>while</strong> loop. The <strong>while</strong> loop is called a <em>conditional loop</em> because it will continue looping until some condition it is testing changes. Here&#8217;s an example of a <strong>while</strong> loop:</p>
+<div class="highlight-python"><div class="highlight"><pre>game_running = True
+while game_running:
+        # run some Python statements
 </pre></div>
 </div>
-<p>What these program lines mean is that while the variable <strong>game_running</strong> is <strong>True</strong>, the while loop will keep looping. This also means something in the <strong>while</strong> loop will have to change the value of <strong>game_running</strong> in order for the program to exit the loop. Forgetting to provide a way for the <strong>while</strong> loop to end creates what’s called an <em>infinite loop</em>. This is usually a bad thing and means in order to exit the program it has to be crashed or stopped in some other way.</p>
-</section>
-<section id="more-things-we-can-do-with-lists">
-<h2>More Things We Can Do With Lists<a class="headerlink" href="#more-things-we-can-do-with-lists" title="Permalink to this heading">¶</a></h2>
-<p>We’ve used Python lists before to hold things we want to deal with as one thing, like lists of turtles. We’ve created lists and appended things to lists. So far we’ve used the things in the list one at a time using the <strong>for</strong> loop. But how do we get to the individual things inside a list? For example, suppose I have this list in Python:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Andy&quot;</span><span class="p">,</span> <span class="s2">&quot;George&quot;</span><span class="p">,</span> <span class="s2">&quot;Sally&quot;</span><span class="p">,</span> <span class="s2">&quot;Sharon&quot;</span><span class="p">,</span> <span class="s2">&quot;Sam&quot;</span><span class="p">,</span> <span class="s2">&quot;Chris&quot;</span><span class="p">]</span>
+<p>What these program lines mean is that while the variable <strong>game_running</strong> is <strong>True</strong>, the while loop will keep looping. This also means that something in the <strong>while</strong> loop will have to change the value of <strong>game_running</strong> in order for the program to exit the loop. Forgetting to provide a way for the <strong>while</strong> loop to end creates what&#8217;s called an <em>infinite loop</em>. This is usually a bad thing and means in order to exit the program it has to be crashed or stopped in some other way.</p>
+</div>
+<div class="section" id="more-things-we-can-do-with-lists">
+<h2>More Things We Can Do With Lists<a class="headerlink" href="#more-things-we-can-do-with-lists" title="Permalink to this headline">¶</a></h2>
+<p>We&#8217;ve used Python lists before to hold things we want to deal with as one thing, like lists of turtles. We&#8217;ve created lists, we&#8217;ve appended things to lists, we&#8217;ve generated lists with the <strong>range()</strong> function. So far we&#8217;ve used the things in the list one at a time using the <strong>for</strong> loop. But how do we get to the individual things inside a list? For example, suppose I have this list in Python:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Andy&quot;</span><span class="p">,</span> <span class="s">&quot;George&quot;</span><span class="p">,</span> <span class="s">&quot;Sally&quot;</span><span class="p">,</span> <span class="s">&quot;Sharon&quot;</span><span class="p">,</span> <span class="s">&quot;Sam&quot;</span><span class="p">,</span> <span class="s">&quot;Chris&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>How can I get just the “Sally” name from the <strong>names</strong> list variable? We use something called <em>list indexing</em> to do that. Everything in a list has a position in the list, and all lists in Python start at position 0. The position is called an index, so to get “Sally” from the list, remembering all lists start at index 0, we do this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<p>How can I get just the &#8220;Sally&#8221; name from the <strong>names</strong> list variable? We use something called <em>list indexing</em> to do that. Everything in a list has a position in the list, and all lists in Python start at position 0. The position is called an index, so to get &#8220;Sally&#8221; from the list, remembering all lists start at index 0, we do this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">name</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>When we do this the variable <strong>name</strong> will be equal to “Sally” from our list. The “[2]” above is called the index into the list. We’ve told Python we want the thing inside the <strong>names</strong> list at index 2.</p>
-<section id="how-many-items-are-in-a-list">
-<h3>How Many Items Are In A List?<a class="headerlink" href="#how-many-items-are-in-a-list" title="Permalink to this heading">¶</a></h3>
-<p>It’s often useful to be able to find out how many things are in a list. For instance, our <strong>names</strong> list above has six strings in it. But how could we find this out using Python? We use the <strong>len()</strong> function. It looks like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_names_in_list</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<p>When we do this the variable <strong>name</strong> will be equal to &#8220;Sally&#8221; from our list. The &#8220;[2]&#8221; above is called the index into the list. We&#8217;ve told Python we want the thing inside the <strong>names</strong> list at index 2.</p>
+<div class="section" id="how-many-items-are-in-a-list">
+<h3>How Many Items Are In A List?<a class="headerlink" href="#how-many-items-are-in-a-list" title="Permalink to this headline">¶</a></h3>
+<p>It&#8217;s often useful to be able to find out how many things are in a list. For instance, our <strong>names</strong> list above has six strings in it. But how could we find this out using Python? We use the <strong>len()</strong> function. It looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">number_of_names_in_list</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This will set the variable <strong>number_of_names_in_list</strong> equal to six. Notice something about the number of items in the <strong>names</strong> list and the largest index, the name “Chris”. To get the name “Chris” from our <strong>names</strong> list we would do this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<p>This will set the variable <strong>number_of_names_in_list</strong> equal to six. Notice something about the number of items in the <strong>names</strong> list and the largest index, the name &#8220;Chris&#8221;. To get the name &#8220;Chris&#8221; from our <strong>names</strong> list we would do this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">name</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The last thing in the list is at index 5, but the number of things in the list is 6. This is because all lists start with index 0, which is included in the number of things in the list. So for the names list we have indexes 0, 1, 2, 3, 4 and 5, totaling 6 things.</p>
-</section>
-<section id="how-to-pick-random-things-from-a-list">
-<h3>How To Pick Random Things From A List?<a class="headerlink" href="#how-to-pick-random-things-from-a-list" title="Permalink to this heading">¶</a></h3>
-<p>Now we know how to pick individual things from a list, how to determine how long a list is and what the maximum index value in a list is. Can we use this information to choose a random thing from a list? For a minute let’s think about our turtle programs, we had a list something like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;organge&quot;</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
+<p>The last thing in the list is at index 5, but the number of things in the list is 6. This is because all lists start with index 0, which is included in the number of things in the list. So for the names list we have indexes 0, 1, 2, 3, 4 and 5, totallng 6 things.</p>
+</div>
+<div class="section" id="how-to-pick-random-things-from-a-list">
+<h3>How To Pick Random Things From A List?<a class="headerlink" href="#how-to-pick-random-things-from-a-list" title="Permalink to this headline">¶</a></h3>
+<p>Now we know how to pick individual things from a list, how to determine how long a list is and what the maximum index value in a list is. Can we use this information to choose a random thing from a list? For a minute let&#8217;s think about our turtle programs, we had a list something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;organge&quot;</span><span class="p">,</span> <span class="s">&quot;yellow&quot;</span><span class="p">,</span> <span class="s">&quot;green&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>How could we pick a random color from this list to use when we were creating a turtle? We know the smallest index is 0, which would be the color “black”. We also know by looking at the list that our largest index is 5, the color blue. This is one less than the number of colors in the list. So we could do something like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;organge&quot;</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
+<p>How could we pick a random color from this list to use when we were creating a turtle? We know the smallest index is 0, which would be the color &#8220;black&#8221;. We also know by looking at the list that our largest index is 5, the color blue. This is one less than the number of colors in the list. So we could do something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;organge&quot;</span><span class="p">,</span> <span class="s">&quot;yellow&quot;</span><span class="p">,</span> <span class="s">&quot;green&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">]</span>
 <span class="n">turtle_color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
 </pre></div>
 </div>
 <p>This Python statement would set the <strong>turtle_color</strong> variable to a random color from our <strong>colors</strong> list. But what if we added more colors to our list? Something like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;organge&quot;</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;violet&quot;</span><span class="p">,</span> <span class="s2">&quot;pink&quot;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;organge&quot;</span><span class="p">,</span> <span class="s">&quot;yellow&quot;</span><span class="p">,</span> <span class="s">&quot;green&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="s">&quot;violet&quot;</span><span class="p">,</span> <span class="s">&quot;pink&quot;</span><span class="p">]</span>
 <span class="n">turtle_color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
 </pre></div>
 </div>
-<p>Unless we change the ‘5’ in the <strong>random.randint(5)</strong> function we’ll still be picking from the first six colors and ignoring the new ones we added. What if we’re picking random colors all over our program, we’d have to change all the lines that pick a color every time we changed the number of colors in our <strong>colors</strong> list. Can we get Python to handle this for us? Sure we can, we can use the <strong>len()</strong> function to help us out. We can change our code to look like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;organge&quot;</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;violet&quot;</span><span class="p">,</span> <span class="s2">&quot;pink&quot;</span><span class="p">]</span>
+<p>Unless we change the &#8216;5&#8217; in the <strong>random.randint(5)</strong> function we&#8217;ll still be picking from the first six colors and ignoring the new ones we added. What if we&#8217;re picking random colors all over our program, we&#8217;d have to change all the lines that pick a color every time we changed the number of colors in our <strong>colors</strong> list. Can we get Python to handle this for us? Sure we can, we can use the <strong>len()</strong> function to help us out. We can change our code to look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;organge&quot;</span><span class="p">,</span> <span class="s">&quot;yellow&quot;</span><span class="p">,</span> <span class="s">&quot;green&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="s">&quot;violet&quot;</span><span class="p">,</span> <span class="s">&quot;pink&quot;</span><span class="p">]</span>
 <span class="n">turtle_color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
 </pre></div>
 </div>
-<p>What’s going on here? We still have our <strong>colors</strong> list variable, but now we’re using the <strong>len()</strong> function inside our <strong>random.randint()</strong> function. This is okay, the <strong>len()</strong> function returns a number and <strong>random.randint()</strong> expects a number as its second parameter. But now we’re telling <strong>random.randint()</strong> the upper index limit of the numbers we want to choose from is one less than the number of things in the <strong>colors</strong> list variable. And as we’ve seen, one less than the number of things in a list will always be the highest index in the list. By using the code above we can add or subtract as many items from the <strong>colors</strong> list as we want and our random selection will still work, using all the things in the list.</p>
-</section>
-</section>
-<section id="our-completed-guess-my-number-program">
-<h2>Our Completed Guess My Number Program<a class="headerlink" href="#our-completed-guess-my-number-program" title="Permalink to this heading">¶</a></h2>
-<p>Here’s our Guess My Number program, complete with comments:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
-<span class="c1"># guess my number</span>
-<span class="c1">#</span>
+<p>What&#8217;s going on here? We still have our <strong>colors</strong> list variable, but now we&#8217;re using the <strong>len()</strong> function inside our <strong>random.randint()</strong> function. This is okay, the <strong>len()</strong> function returns a number and <strong>random.randint()</strong> expects a number as its second parameter. But now we&#8217;re telling <strong>random.randint()</strong> that the upper limit of the numbers we want to choose from is one less than the number of things in the <strong>colors</strong> list variable. And as we&#8217;ve seen, one less than the number of things in a list will always be the highest index in the list. By using the code above we can add or subtract as many items from the <strong>colors</strong> list as we want and our random selection will still work.</p>
+</div>
+</div>
+<div class="section" id="our-completed-guess-my-number-program">
+<h2>Our Completed Guess My Number Program<a class="headerlink" href="#our-completed-guess-my-number-program" title="Permalink to this headline">¶</a></h2>
+<p>Here&#8217;s our Guess My Number program, complete with comments:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#</span>
+<span class="c"># guess my number</span>
+<span class="c">#</span>
 
 <span class="kn">import</span> <span class="nn">random</span>
 
-<span class="c1"># set our game ending flag to False</span>
-<span class="n">game_running</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="c"># set our game ending flag to False</span>
+<span class="n">game_running</span> <span class="o">=</span> <span class="bp">True</span>
 
 <span class="k">while</span> <span class="n">game_running</span><span class="p">:</span>
-        <span class="c1"># Greet the user to our game</span>
-        <span class="nb">print</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m thinking of a number between 1 and 10, can you guess it?&quot;</span><span class="p">)</span>
+        <span class="c"># Greet the user to our game</span>
+        <span class="k">print</span>
+        <span class="k">print</span> <span class="s">&quot;I&#39;m thinking of a number between 1 and 10, can you guess it?&quot;</span>
 
-        <span class="c1"># have the program pick a random number between 1 and 10</span>
+        <span class="c"># have the program pick a random number between 1 and 10</span>
         <span class="n">secret_number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 
-        <span class="c1"># set the player&#39;s guess number to something outside the range</span>
+        <span class="c"># set the player&#39;s guess number to something outside the range</span>
         <span class="n">guess_number</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
-        <span class="c1"># loop until the player guesses our number</span>
+        <span class="c"># loop until the player guesses our number</span>
         <span class="k">while</span> <span class="n">guess_number</span> <span class="o">!=</span> <span class="n">secret_number</span><span class="p">:</span>
 
-                <span class="c1"># get the player&#39;s guess from the player</span>
-                <span class="nb">print</span><span class="p">()</span>
-                <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter a number: &quot;</span><span class="p">)</span>
+                <span class="c"># get the player&#39;s guess from the player</span>
+                <span class="k">print</span>
+                <span class="n">guess</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Please enter a number: &quot;</span><span class="p">)</span>
 
-                <span class="c1"># does the user want to quit playing?</span>
-                <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="s2">&quot;quit&quot;</span><span class="p">:</span>
-                        <span class="n">game_running</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="c"># does the user want to quit playing?</span>
+                <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="s">&quot;quit&quot;</span><span class="p">:</span>
+                        <span class="n">game_running</span> <span class="o">=</span> <span class="bp">False</span>
                         <span class="k">break</span>
 
-                <span class="c1"># otherwise, nope, player wants to keep going</span>
+                <span class="c"># otherwise, nope, player wants to keep going</span>
                 <span class="k">else</span><span class="p">:</span>
-                        <span class="c1"># convert the players guess from a string to an integer</span>
+                        <span class="c"># convert the players guess from a string to an integer</span>
                         <span class="n">guess_number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
 
 
-                <span class="c1"># did the player guess the program&#39;s number?</span>
+                <span class="c"># did the player guess the program&#39;s number?</span>
                 <span class="k">if</span> <span class="n">guess_number</span> <span class="o">==</span> <span class="n">secret_number</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">()</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Congratulations, you guessed my number!&quot;</span><span class="p">)</span>
+                        <span class="k">print</span>
+                        <span class="k">print</span> <span class="s">&quot;Congratulations, you guessed my number!&quot;</span>
 
-                <span class="c1"># otherwise, whoops, nope, go around again</span>
+                <span class="c"># otherwise, whoops, nope, go around again</span>
                 <span class="k">else</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">()</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oh, to bad, that&#39;s not my number...&quot;</span><span class="p">)</span>
+                        <span class="k">print</span>
+                        <span class="k">print</span> <span class="s">&quot;Oh, to bad, that&#39;s not my number...&quot;</span>
 
-<span class="c1"># say goodbye to the player</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thanks for playing!!&quot;</span><span class="p">)</span>
+<span class="c"># say goodbye to the player</span>
+<span class="k">print</span>
+<span class="k">print</span> <span class="s">&quot;Thanks for playing!!&quot;</span>
 </pre></div>
 </div>
-</section>
-<section id="congratulations">
-<h2>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this heading">¶</a></h2>
-<p>We’ve completed our course and I hope you’ve had as much fun as I have! We’ve written some pretty amazing programs and learned quite a bit about programming and Python along the way. My wish is this interested you enough to keep learning about programming and to continue on to discover new things you can do with Python!</p>
-</section>
-</section>
+</div>
+<div class="section" id="congratulations">
+<h2>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this headline">¶</a></h2>
+<p>We&#8217;ve completed our course and I hope you&#8217;ve had as much fun as I have! We&#8217;ve written some pretty amazing programs and learned quite a bit about programming and Python along the way. My wish is this interested you enough to keep learning about programming and to continue on to discover new things you can do with Python!</p>
+</div>
+</div>
 
 
-            <div class="clearer"></div>
           </div>
-        </div>
       </div>
-    
-        <div id="show_right_sidebar">
-            <p><a class="toggle_right_sidebar" href="#"><span class="icon"><</span><span>Page contents<span></a></p>
-        </div>
-
-        <div id="right_sidebar">
-            <p><a class="toggle_right_sidebar" href="#"><span class="icon">></span><span>Page contents:<span></a></p>
-            <div class="page_toc">
-                <ul>
-<li><a class="reference internal" href="#">Class 4 : Let’s Write A Program Together</a><ul>
-<li><a class="reference internal" href="#getting-information-from-the-player">Getting Information From The Player</a></li>
-<li><a class="reference internal" href="#converting-a-string-to-a-number">Converting A String To A Number</a></li>
-<li><a class="reference internal" href="#another-kind-of-loop">Another Kind Of Loop</a></li>
-<li><a class="reference internal" href="#more-things-we-can-do-with-lists">More Things We Can Do With Lists</a><ul>
-<li><a class="reference internal" href="#how-many-items-are-in-a-list">How Many Items Are In A List?</a></li>
-<li><a class="reference internal" href="#how-to-pick-random-things-from-a-list">How To Pick Random Things From A List?</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#our-completed-guess-my-number-program">Our Completed Guess My Number Program</a></li>
-<li><a class="reference internal" href="#congratulations">Congratulations!</a></li>
-</ul>
-</li>
-</ul>
-
-            </div>
-        </div>
-    
-
       <div class="clearer"></div>
     </div>
-    <div class="button_nav_wrapper">
-        <div class="button_nav">
-            <div class="left">
-                
-                <a href="class_three.html">
-                    <span class="icon"><</span><span>Class 3 : Let’s Get Those Turtles Thinking</span></a>
-                
-            </div>
-
-            <div class="right">
-                
-                    <a href="appendix.html"><span>Appendix : Python Information That Doesn’t Fit In Class</span><span class="icon">></span></a>
-                
-            </div>
-        </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="appendix.html" title="Appendix : Python Information That Doesn’t Fit In Class"
+             >next</a></li>
+        <li class="right" >
+          <a href="class_three.html" title="Class 3 : Let’s Get Those Turtles Thinking"
+             >previous</a> |</li>
+        <li><a href="index.html">Python Class 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
     </div>
-
-
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Doug Farrell.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <div class="footer">
+        &copy; Copyright 2015, Doug Farrell.
     </div>
-
-<p id="theme_credit">Styled using the <a href="https://github.com/piccolo-orm/piccolo_theme">Piccolo Theme</a></p>
   </body>
 </html>

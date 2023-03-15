@@ -1,0 +1,445 @@
+Class 3 : Let's Get Those Turtles Thinking
+******************************************
+
+In our last class we used a Python list to help us get multiple turtles drawing on the screen. We could keep adding turtles to our hearts delight and the program would faithfully make each turtle draw our flower. This worked very well drawing the well controlled structure of the flower. But what is we want to draw something that's randomly generated, something where the turtles draw something and we don't know ahead of time what that will be? How can we use what we know already to help us do that? Let's teach our program how to make decisions and do things on it's own. Here is an image of one possible graphical outcome for our class:
+
+.. image:: images/random_turtles.png
+
+New Turtle Drawing Functions
+============================
+
+We're going to create a new program where our turtles use some new drawing functions and new modules to create a randomly drawn image. Let's learn the new turtle drawing functions first. So let's start out by starting **Idle**, opening a new program editor window and creating a new Python program. In this new program let's start like we've done before by entering this Python statement::
+
+	import turtle
+
+Save this program to a new file name, somewhere you can remember where to find it.
+
+Get The Turtle Screen
++++++++++++++++++++++
+
+The first new turtle drawing function we're going to learn isn't really about the turtles at all, but about the screen they draw on. Up until now we haven't cared to much about the screen the turtles are drawing on, we've just let the turtles create it as needed and away we go. But now we want to modify something about the screen. In order to do that we have to first get the screen in a manner that we can change it. As with everything we do with Python programming, any time we want to get something so we can modify it, we save it to a variable. To get the screen we enter the following into our new program::
+
+	screen = turtle.Screen()
+
+This calls another function of our turtle module, **Screen()**, which gets the screen the module will use to draw turtles on, and saves it in the newly created variable **screen**. Notice how the **Screen()** function of the turtle module has it's first letter capitalized, like when we create a turtle with **Turtle()**.
+
+Set The Screen Size 
++++++++++++++++++++
+
+Until now we've let the turtle module create our window to be whatever size it wants. We can control this using the **setup()** function of a turtle. I'm not sure why this is a turtle function instead of s screen function, but sometimes programming is like that. This function looks like this::
+
+	turtle.setup(1024, 768)
+
+This Python statement sets our turtle drawing window to be 1024 pixels wide by 768 pixels tall.
+
+Set The Background Color Of The Screen
+++++++++++++++++++++++++++++++++++++++
+
+Now that we have a variable that represents the screen, we can modify a feature of it. We're going to change the background color from white to some other color. We do this using this Python statement::
+
+	screen.bgcolor("#FFFFE0")
+
+This statement shows how to use the **screen** variable and call one it's functions, **bgcolor()** (short for background color) to set the background color on the screen. If we save and run this you'll see an empty turtle window that has a light yellow color instead of white. The light yellow color is the **"#FFFFE0"** we passed as a parameter to the **bgcolor()** function. So what does **"#FFFFE0"** mean? We could have just passed "yellow" to the **bgcolor()** function, like we've done with our turtles, but that yellow is pretty intense and I wanted something lighter for a background color. So we've used a different way to define a color, this way comes right out of **HTML** (web page) coding. The **"#FFFFE0"** value represents setting the RGB (Red / Green / Blue) color value, each two character portion of the string FFFFE0 represents a value from 0 - 255 in hexidecimal. This breaks down like this::
+
+	FF FF E0
+	 |  |  |
+	 |  |  +--- 224 Blue
+	 |  +------ 255 Green
+	 +--------- 255 Red
+	   
+This somewhat complex color code let's us pick a color much more precisely than the limited pre-defined set of named colors (like "red" or "yellow") that are inside the turtle module.	   
+
+Turtles Are Rubber Stamps!
+++++++++++++++++++++++++++
+
+We can also use our turtles as rubber stamps! By this I mean we can tell the turtle to leave a permanent image of itself at any point the turtle exists on the screen. We do this by using the turle **stamp()** function, which looks like this::
+
+	turtle.stamp()
+
+Running this Python statement makes a "stamp" of our turtle on the screen. When next we move the turtle you will see the stamp it left behind, kind of like bread crumbs of where its been. Let's see how this works by entering the following into our program to make it look like this::
+
+	import turtle
+
+	screen = turtle.Screen()
+	turtle.setup(1024, 768)
+	screen.bgcolor("#FFFFE0")
+
+	t1 = turtle.Turtle()
+	t1.speed(0)
+	t1.shape("turtle")
+	t1.width(3)
+	t1.color("red")
+
+	for side in range(4):
+		t1.forward(100)
+		t1.stamp()
+		t1.right(90)
+
+When we save and run this program we should end up with a box outlined in red and a turtle "stamp" at each corner. The screen should look like this:
+
+.. image:: images/stamping.png
+
+New Modules and Functions
+=========================
+
+In order to make our new program have random behavior we need to import a new module, logically enough called "random". The random module, like the turtle module, brings additional functionality into our program so we can use it. Add this line::
+
+	import random
+
+at the top of our program right under the import turtle statement. Just like the turtle module this doesn't do anything immediately, but now our program has access to the functions in the random module. 
+
+Pick a Number, Any Number
++++++++++++++++++++++++++
+
+The module random, as the name suggests, create randomness. We'll use the functions in the random module to make our turtle drawing less predictable, and maybe more interesting. One of those functions is called **randint()**, and it generates random integers. If we jump over to our **Idle** interactive window we can try out the **randint()** function. Enter this into our **Idle** interactive window to try the **randint()** function out::
+
+	>>> random.randint(0, 10)
+	4
+	>>> random.randint(0, 10)
+	10
+	>>>
+
+You can see that just like the functions in the turtle module we have to use the module name random and a "." character before the function we want. In the above lines we've used the **randint()** function twice and it returned a different number each time. This is what **randint()** does, it returns randomly generated integers. The two numbers we passed to it (0 and 10) as parameters telling **randint()** the beginning and ending limits of numbers we want it to generate. In our case we want integer numbers ranging from 0 to 10, including both 0 and 10. Random number generators are used a lot in game programming to create unexpected behavior and challenges for the player.
+
+Let's Get Our Program Going
+===========================
+
+Let's get our random turtle program going so we can add things to it. Make your program look like this::
+
+	import turtle
+	import random
+
+	screen = turtle.Screen()
+	screen.bgcolor("#FFFFE0")
+
+	for move in range(100):
+		for a_turtle in turtles:
+			move_turtle(a_turtle)
+
+If we try to save and run the above program we'll get errors. Why is this? Well for a couple of reasons, we have no variable named **turtles** and the function **move_turtle()** isn't defined. Let's fix that. Like our flower program we want to create a list of turtles, and we'll need to define our **move_turtle()** funciton. So make your program look like this:
+
+.. code-block:: python
+
+	import turtle
+	import random
+
+	screen = turtle.Screen()
+	screen.bgcolor("#FFFFE0")
+
+	def move_turtle(t):
+		pass
+
+	turtles = []
+
+	for move in range(100):
+		for a_turtle in turtles:
+			move_turtle(a_turtle)
+
+Now when we save and run our program it doesn't crash with an error, but it doesn't do anything other than open a light yellow window. Why is that? Again, a couple of reasons. We haven't defined any turtles in our **turtles** list variable. We've also defined our **move_turtle()** function (the **pass** statement is just a place holder), but it doesn't do anything. First things first, let's create our turtles. 
+
+Getting A Variable From A Function
+++++++++++++++++++++++++++++++++++
+
+In our flower program when we wanted to create our turtles we did so by copying the turtle creation and setup code for every turtle we wanted. Then we put all those turtles into a list we called **turtles**. This works fine, but let's do something clever and create a function to create our turtle for us. And let's define it so we can set the color of the turtle by passing the color as a paramter to the function. Here's a function that will do just that::
+
+	def create_turtle(color):
+		t = turtle.Turtle()
+		t.speed(0)
+		t.width(3)
+		t.shape("turtle")
+		t.color(color)
+		return t
+
+Notice at the end of the **create_turtle(color)** definition, the "return t" statement. What does this do? This is how to return the turtle we just created for use in the rest of the program. We've seen this before when we used the "t1 = turtle.Turtle()" statement. The "turtle.Turtle()" function *returns* a turtle, and that returned turtle is assigned to the variable t1. In our case we're returning the turtle we created, what we called *t*, so it can be saved someplace in our program and used later.
+
+Now we have a function that will create a turtle for us that will draw with the color we've asked for. But we need to create multiple turtles to put into our **turtles** list variable. The **create_turtle()** only creates one turtle, how can we create multiple turtles with it? An easy way to do this is to create another function that uses **create_turtles()** inside a loop to create our list of turtles. Here's a function that does that::
+
+	def create_turtles(colors):
+		turtles = []
+		for color in colors:
+			t = create_turtle(color)
+			turtles.append(t)
+		return turtles
+
+Here we've created a function **create_turtles(colors)** (notice the plural on both the name of the function and the parameter) that creates a list of turtles. We use this function like this::
+
+	colors = ["black", "red", "orange", "green"]
+	turtles = create_turtles(colors)
+
+In the above code we created a variable **colors** that contains a list of four valid turtle colors. We then passed that list to our **create_turtles()** function. Inside that function we create an empty turtles list with the "turtles = []" statement. Then we start a **for** loop that takes one color at a time from the **colors** parameter, passes that to our **create_turtle()** function, which creates a turtle that draws in that color. We then use the "turtles.append(t)" statement to add the turtle to our **turtles** variable. At the end of the loop we return our **turtles** variable so it can be used later.
+
+If we save and run this program it works, but doesn't draw anything but the last green turtle on the screen. Remember turtles are all created in the center of the screen, so all four are there, just stacked on top of each other. Let's put some code in our **move_turtle(t)** function to get those turtles moving.
+
+Moving Turtles Randomly
++++++++++++++++++++++++
+
+We want our turtles to draw randomly around the screen, so inside the **draw_turtle(t)** function is where we're going to use our **random.randint()** function that we learned about earlier. We also want to *stamp* a turtle on the screen with every move, which is where we'll use our **stamp()** function. Here's a funciton that will turn a turtle a random angle and move it a random distance::
+
+	def move_turtle(t):
+		t.stamp()
+		angle = random.randint(-90, 90)
+		t.right(angle)
+		distance = random.randint(50, 100)
+		t.forward(distance)
+
+This function does a couple of things. First, it expects a turtle as a parameter variable, in the case above that parameter variable is **t**. The first thing the function does is use our turtle **t** to **stamp()** a turtle image on the screen. It then useses the **randint()** function to create an **angle** variable set to between -90 and 90 degrees. This allows our turtle to turn left or right some random amount. We pass this random **angle** variable to our **turn(angle)** function to turn our **t** turtle. We then do a similar thing to create a random **distanace** varible set to between 50 and 100. We use this variable in our **t.forward(distance)** function call to move our **t** turtle forward some distance.
+
+Our Program So Far
+++++++++++++++++++
+
+Let's see what we've got for our program so far:
+
+.. code-block:: python
+
+	import turtle
+	import random
+
+	screen = turtle.Screen()
+	turtle.setup(1024, 768)
+	screen.bgcolor("#FFFFE0")
+
+	# the number of turtles to create and what color to create them with
+	colors = ["black", "red", "orange", "green"]
+
+	# create a new turtle with a certain color
+	def create_turtle(color):
+		t = turtle.Turtle()
+		t.speed(0)
+		t.width(3)
+		t.shape("turtle")
+		t.color(color)
+		return t
+
+	# create a list of turtles from a list of colors
+	def create_turtles(colors):
+		turtles = []
+		for color in colors:
+			t = create_turtle(color)
+		turtles.append(t)
+		return turtles
+
+	def move_turtle(t):
+		t.stamp()
+		angle = random.randint(-90, 90)
+		t.right(angle)
+		distance = random.randint(50, 100)
+		t.forward(distance)
+
+	turtles = create_turtles(colors)
+
+	for move in range(100):
+		for a_turtle in turtles:
+			move_turtle(a_turtle)
+
+If you save and run our program it will generate a screen that looks something like this:
+
+.. image:: images/stamping_1.png
+
+You probably noticed that your turtles might have wandered off the screen, sometimes never to return. How can we keep our turtles on the screen so we can see what they're drawing? We have them make decisions so they know how to turn around if they go off the screen. This is where we use something called *conditionals* in programming, a way of making a decision based on a condition that is happening in our program.
+
+Conditionals
+============
+
+As we briefly talked about in our first class, the way to make programs act smarter is to have them make decisions. To do this we use something called *conditionals*. Conditionals are just a way for a program to look at something (a condition) and make a decision to do something or something else. For instance, here's some possible Python conditional program statements:
+
+.. code-block:: python
+	:linenos:
+
+	if x < -250 or x > 250:
+		outside_box = True
+
+Here's what's happening in this series of Python statements:
+
+#. Use the **if** statement to test whether the variable **x** is less than negative 250, or greater than positve 250
+#. If **x** is outside those two values, set the variable **outside_box** to *Boolean* True
+   
+How can we use conditionals to keep our turtles inside a viewable area? First off let's make our viewable area a box that's inside our screen so we can see what our turtles do when they go outside that box. In our program we'll create a variable **box_size** equal to the size of the box we want to make our viewable area, let's say 500. We'll also use one of our turtles to draw this viewable box on the screen so we can see the boundary box. Let's make our program look like this:
+
+.. code-block:: python
+
+	import turtle
+	import random
+
+	screen = turtle.Screen()
+	turtle.setup(1024, 768)
+	screen.bgcolor("#FFFFE0")
+
+	colors = ["black", "red", "orange", "green"]
+
+	box_size = 500
+
+	def create_turtle(color):
+		t = turtle.Turtle()
+		t.speed(0)
+		t.width(3)
+		t.shape("turtle")
+		t.color(color)
+		return t
+
+	def create_turtles(colors):
+		turtles = []
+		for color in colors:
+		t = create_turtle(color)
+		turtles.append(t)
+		return turtles
+
+	def move_turtle(t):
+		t.stamp()
+		angle = random.randint(-90, 90)
+		t.right(angle)
+		distance = random.randint(50, 100)
+		t.forward(distance)
+
+	turtles = create_turtles(colors)
+
+	t1 = turtles[0]
+	t1.penup()
+	t1.goto(box_size / 2, box_size / 2)
+	t1.pendown()
+
+	for side in range(4):
+		t1.right(90)
+		t1.forward(box_size)
+
+	t1.penup()
+	t1.goto(0, 0)
+	t1.pendown()
+
+	for move in range(100):
+		for a_turtle in turtles:
+			move_turtle(a_turtle)
+
+Right under where we create our **colors** list we've created the **box_size** variable and set it equal to 500. Further down under where we created our **turtles** list variable, we've used the first turtle from the list, **t1 = turtles[0]**, to draw our viewable broundary box. After we're done drawing the box the turtle is moved back to it's starting position.
+
+So how do we use a conditional to keep our turtles inside the box we've just drawn? First things first, we need to know where the turtle is in order to figure out if it's outside the boundary box. To do this we need another turtle function.
+
+Where's My Turtle 
++++++++++++++++++
+
+A turtle has two functions that tell us where it is in relation to the home position, (0, 0). Those functions are called **xcor()** and **ycor()**, which are short for x coordinate and y coordinate. They are used like this::
+
+	x = t.xcor()
+	y = t.ycor()
+
+As you might have guessed, the **t.xcor()** function returns the current x coordinate of the turtle **t**, and **t.ycor()** returns the current y coordinate of the turtle.
+
+Now we have enough information to decide if a turtle is inside our outside our boundary box. We know where the edges of the boundary box are in relation to where we started drawing it, plus and minus 250 pixels in relation to the starting position of the turtles, (0, 0). We also can figure out where our turtles are any time we want, which we can compare to the boundary box edges. Let's create a function that returns True if the turtle is outside the box and False otherwise. The function will need the turtle to test and information about the box. That function looks like this::
+
+	def is_turtle_outside_box(t, size):
+		outside_box = False
+		x = t.xcor()
+		y = t.ycor()
+		if x < (size / 2) or x > (size / 2):
+			outside_box = True
+		if y < (size / -2) or y > (size / 2):
+			outside_box = True
+		return outside_box
+
+This function expects a turtle to be passed as the first parameter and a number for the size of the boundary box as the second parameter. It then sets the return variable **outside_box** initially to False. It then creates the **x** and **y** variables, setting them to the x and y coordinates of the passed in turtle **t** respectively. Then using an **if** statement it compares the **x** and **y** variables to the **size** divided by 2. Why is the **size** divided by 2? Because my intention is to pass the **box_size** variable to this function, and the boundary box is centered on the screen, with half (250 pixels) on each side of that.
+
+Now that we have this function, how can we use it? Inside our inner most loop we move our turtle, at which point it might be outside the boundary box, so this seems like a good place to use our **is_turtle_outside_box()** function. Here's just the looping portion of our current program showing the inclusion of the new function:
+
+.. code-block:: python
+
+	for move in range(100):
+		for a_turtle in turtles:
+			move_turtle(a_turtle)
+			if is_turtle_outside_box(a_turtle, box_size) == True:
+				a_turtle.right(180)
+				a_turtle.forward(100)	
+
+What we've done is after our **move_turtle()** function call, we added an **if** statement that uses our **is_turtle_outside_box()** function to figure out if our turtle **t** is outside the boundary box. If the return value of **is_turtle_outside_box()** is True, we turn our turtle **t** around 180 degrees from where it's currently facing and move it 100 pixels back inside the boundary box. Then the loop moves onto the next turtle and the next move for all turtles. 
+
+Here's our completed program with comments:
+
+.. code-block:: python
+
+	import turtle
+	import random
+
+	# change the color of the background
+	screen = turtle.Screen()
+	screen.bgcolor("#FFFFE0")
+
+	# the number of turtles to create and what color to create them with
+	colors = ["black", "red", "orange", "green"]
+
+	# size of our box
+	box_size = 500
+
+	# create a new turtle with a certain color
+	def create_turtle(color):
+		t = turtle.Turtle()
+		t.speed(0)
+		t.width(3)
+		t.shape("turtle")
+		t.color(color)
+		return t
+
+	# create a list of turtles from a list of colors
+	def create_turtles(colors):
+		turtles = []
+		for color in colors:
+			t = create_turtle(color)
+			turtles.append(t)
+		return turtles
+
+
+	# stamp and move the turtle 
+	def move_turtle(t):
+		t.stamp()
+		angle = random.randint(-90, 90)
+		t.right(angle)
+		distance = random.randint(50, 100)
+		t.forward(distance)
+
+	# is the turtle outside the box?    
+	def is_turtle_outside_box(t, size):
+		outside_box = False
+		x = t.xcor()
+		y = t.ycor()
+		if x < (size / -2)  or x > (size / 2):
+			outside_box = True
+		if y < (size / -2) or y > (size / 2):
+			outside_box = True
+		return outside_box
+
+	# create our list of turtles
+	turtles = create_turtles(colors)
+
+	# use the first turtle to draw our boundary box    
+	t1 = turtles[0]
+	t1.penup()
+	t1.goto(box_size / 2, box_size / 2)
+	t1.pendown()
+
+	for side in range(4):
+		t1.right(90)
+		t1.forward(box_size)
+
+	t1.penup()
+	t1.goto(0, 0)
+	t1.pendown()
+
+	# move all the turtles a hundred times
+	for move in range(100):
+
+		# move a particular turtle from our list of turtles
+		for a_turtle in turtles:
+			move_turtle(a_turtle)
+
+			# is the turtle outside the boundary box?
+			if is_turtle_outside_box(a_turtle, box_size) == True:
+
+				# turn the turtle around and move it back 
+				a_turtle.right(180)
+				a_turtle.forward(100)
+
+When we run our program the screen should look something like this:
+
+.. image:: images/random_turtles.png
+
+Congratulations!
+================
+
+You're all getting to be real Python programmers now! You've created a program that draws with turtles, and makes decisions based on where those turtles are, very, very cool!
